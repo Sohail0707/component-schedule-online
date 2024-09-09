@@ -1,0 +1,65 @@
+/* //////////////////////// THE CONFIRMATION PAGE ////////////////////////
+/////////////////////////////////////////////////////////////////////// */
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE
+  .section_confirmation_container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: repeat(7, auto);
+  column-gap: 6.4em;
+  row-gap: 3.6em;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .attention {
+  font-weight: 400;
+  font-size: 0.7em;
+  color: var(--ScheduleRight);
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .labels span {
+  /* The labels that mentioned before each input description */
+  text-transform: capitalize;
+  font-size: 2em;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--SchedulePrimary);
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .service_name_preview span {
+  text-transform: uppercase;
+  font-size: 2em;
+  font-weight: 500;
+  color: var(--ScheduleBlack);
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .appointment_time_preview,
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .service_location_preview {
+  font-size: 2em;
+  font-weight: 500;
+  color: var(--ScheduleGray__3);
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .customer_details_box {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .customer_phone_preview,
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .customer_email_preview,
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .billing_details_preview {
+  font-size: 2em;
+  font-weight: 400;
+  color: var(--ScheduleGray__3);
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .customer_name_preview,
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .total_amount_preview {
+  font-size: 2em;
+  font-weight: 500;
+  color: var(--ScheduleBlack);
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .service_note_preview {
+  font-size: 1.6em;
+  color: var(--ScheduleGray__3);
+}

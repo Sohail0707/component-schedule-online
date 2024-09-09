@@ -1,0 +1,5 @@
+#__SCHEDULE-ONLINE__LARGE .page {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2em;
+}

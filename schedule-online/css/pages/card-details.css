@@ -1,0 +1,87 @@
+/* /////////////////////// THE CARD DETAILS PAGE ///////////////////////
+///////////////////////////////////////////////////////////////////// */
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .card_details_container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 2.4em;
+  row-gap: 3.2em;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .card_number_box {
+  flex: 1;
+  min-width: 25em;
+  max-width: 100%;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .expiration_date_box {
+  flex: 1;
+  min-width: 18em;
+  max-width: 30em;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .billing_zipcode_box {
+  flex: 1;
+  min-width: 25em;
+  max-width: 25em;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .cvv_box {
+  flex: 1;
+  min-width: 10em;
+  max-width: 13em;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .conditions_box {
+  /* Container that contains some terms comments */
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+  margin-left: auto;
+  flex: 1;
+  min-width: fit-content;
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .condition {
+  font-size: 1.4em;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--ScheduleRight);
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .card_preview_container {
+  /* The main container where the card images are placed.  */
+  margin-top: 4.8em;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .card_preview_tagline {
+  font-size: inherit;
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .card_preview_tagline span {
+  font-size: 2.4em;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--SchedulePrimary);
+  text-transform: capitalize;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .card_preview_box {
+  display: flex;
+  gap: 1.2em;
+  margin-top: 2.4em;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .card_img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 4.2em;
+  width: 7.2em;
+  border: 0.15em solid var(--ScheduleGray__4);
+  border-radius: 0.8em;
+  overflow: hidden;
+  background: var(--ScheduleWhite);
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .card_img img {
+  width: 100%;
+}

@@ -1,0 +1,103 @@
+/* /////////////////////// THE ENTER ADDRESS PAGE ///////////////////////
+////////////////////////////////////////////////////////////////////// */
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .section_location_container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .address_box {
+  margin-top: 1.6em;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .location_list_container ul {
+  /* The main container where the address suggestions are gonna place */
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+
+  transition: max-height 0.3s ease-in-out;
+  overflow: hidden;
+  max-height: 0;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE
+  .location_list_container
+  ul.expanding {
+  /* animate class */
+  max-height: 50em;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE
+  .location_list_container
+  ul.collapsing {
+  /* animate class */
+  max-height: 0;
+}
+
+/* animation for the list */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-30%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-30%);
+  }
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .location_list_container li {
+  /* Outer container of each location's suggestion element */
+  display: flex;
+  align-items: center;
+  padding: 0.8em 2.4em;
+  min-height: 5em;
+  background: var(--ScheduleBlack__1);
+  border: 0.2em solid transparent;
+  cursor: pointer;
+  font-size: inherit;
+
+  opacity: 0; /* Start off as transparent */
+  animation: fadeIn 0.3s forwards;
+  animation-delay: calc(
+    0.1s * var(--index)
+  ); /* Variable delay based on item index */
+  transition: border 0.3s;
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE
+  .location_list_container
+  li
+  span {
+  /* Separated text element of the location suggestion */
+  font-size: 1.6em;
+}
+
+/* CSS class for hiding the list items */
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE
+  .location_list_container
+  li.fade-out {
+  opacity: 1;
+  animation: fadeOut 0.3s forwards;
+  animation-delay: calc(
+    0.1s * var(--index)
+  ); /* Variable delay based on item index */
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE
+  .location_list_container
+  li:hover {
+  border: 0.2em solid var(--ScheduleHighlight);
+}

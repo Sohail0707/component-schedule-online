@@ -1,0 +1,7 @@
+#__SCHEDULE-ONLINE__LARGE .page-heading {
+  font-size: 3em;
+  font-weight: 600;
+  color: var(--ScheduleBlack);
+  line-height: 1;
+  text-transform: capitalize;
+}

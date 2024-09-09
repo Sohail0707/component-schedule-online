@@ -1,0 +1,72 @@
+#__SCHEDULE-ONLINE__LARGE .service__btn-level {
+  /* The button to navigate between different levels of services */
+  text-align: center;
+  border: none;
+  padding: 1.2em;
+  background: transparent;
+  color: var(--ScheduleBlack);
+  transition: color 0.3s;
+  position: relative;
+  z-index: 2;
+}
+
+#__SCHEDULE-ONLINE__LARGE .service__btn-level.clicked {
+  /* The text of the button that is been selected */
+  color: var(--ScheduleWhite) !important;
+}
+
+#__SCHEDULE-ONLINE__LARGE .service__btn-level .text {
+  /* Separate text element of the button select level */
+  line-height: 1;
+  text-transform: uppercase;
+  font-size: 1.6em;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+}
+
+#__SCHEDULE-ONLINE__LARGE .service__card-btn {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0.8em;
+  border: none;
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(0.2em);
+  cursor: pointer;
+  z-index: 2;
+}
+
+#__SCHEDULE-ONLINE__LARGE .service__card-btn--right {
+  right: 0;
+}
+
+#__SCHEDULE-ONLINE__LARGE .service__card-btn .icon {
+  height: 2.4em;
+  width: 2.4em;
+  stroke-width: 0.2em;
+  color: var(--ScheduleHighlight);
+}
+
+#__SCHEDULE-ONLINE__LARGE .schedule-online__btn {
+  text-align: center;
+  padding: 1.2em 2.4em;
+  border: none;
+  border-radius: 0.8em;
+  transition: all 0.2s;
+  display: none;
+}
+#__SCHEDULE-ONLINE__LARGE .schedule-online__btn .text {
+  font-size: 1.6em;
+  font-weight: 500;
+  letter-spacing: 0.136em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+#__SCHEDULE-ONLINE__LARGE .schedule-online__btn--next {
+  display: block;
+  background-color: var(--SchedulePrimary);
+  color: var(--ScheduleWhite);
+}
