@@ -1,5 +1,5 @@
-const iconPack = {
-  checkmark: `<svg
+export const iconPack = {
+	checkmark: `<svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     viewBox="0 0 24 24"
@@ -12,20 +12,20 @@ const iconPack = {
     d="M4.5 12.75l6 6 9-13.5" />
     </svg>`,
 
-  checkmark_circle_outline: `<svg
+	checkmark_circle_outline: `<svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     viewBox="0 0 24 24"
     stroke-width="1.5"
     stroke="currentColor"
-    class="icon">
+    class="icon icon--checkmark">
     <path
     stroke-linecap="round"
     stroke-linejoin="round"
     d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
     </svg>`,
 
-  cross_circle_outline: `<svg
+	cross_circle_outline: `<svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     viewBox="0 0 24 24"
@@ -38,7 +38,7 @@ const iconPack = {
     d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
     </svg>`,
 
-  cross: `<svg
+	cross: `<svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     viewBox="0 0 24 24"
@@ -49,7 +49,18 @@ const iconPack = {
     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
     </svg>`,
 
-  arrow_right: `<svg
+	exclamation: `<svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke-width="2"
+    stroke="currentColor"
+    class="icon icon--exclamation"
+    >
+    <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a99 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
+    </svg>`,
+
+	arrow_right: `<svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     viewBox="0 0 24 24"
@@ -62,7 +73,7 @@ const iconPack = {
     d="M8.25 4.5l7.5 7.5-7.5 7.5" />
     </svg>`,
 
-  arrow_left: `<svg
+	arrow_left: `<svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     viewBox="0 0 24 24"
@@ -75,7 +86,7 @@ const iconPack = {
     d="M15.75 19.5L8.25 12l7.5-7.5" />
     </svg>`,
 
-  arrow_1_right: `<svg
+	arrow_1_right: `<svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     viewBox="0 0 24 24"
@@ -88,7 +99,7 @@ const iconPack = {
     d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
     </svg>`,
 
-  arrow_bottom: `<svg
+	arrow_bottom: `<svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     viewBox="0 0 24 24"
@@ -98,7 +109,7 @@ const iconPack = {
     <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
     </svg>`,
 
-  calander: `<svg
+	calander: `<svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     viewBox="0 0 24 24"
@@ -113,7 +124,7 @@ const iconPack = {
     />
     </svg>`,
 
-  map_pin: `<svg
+	map_pin: `<svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     viewBox="0 0 24 24"
@@ -129,12 +140,12 @@ const iconPack = {
     />
     </svg>`,
 
-  email: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="icon">
+	email: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="icon">
     <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
     <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
     </svg>`,
 
-  email_outline: `<svg
+	email_outline: `<svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     viewBox="0 0 24 24"
@@ -149,14 +160,14 @@ const iconPack = {
     />
     </svg>`,
 
-  phone: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="icon">
+	phone: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="icon">
     <path
     fill-rule="evenodd"
     d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z"
     clip-rule="evenodd" />
     </svg>`,
 
-  phone_outline: `<svg
+	phone_outline: `<svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     viewBox="0 0 24 24"
@@ -173,20 +184,20 @@ const iconPack = {
 };
 
 function addIcons() {
-  const iconEl = document.querySelectorAll("icon");
-  iconEl.forEach((icon) => {
-    const name = icon.getAttribute("name");
-    if (iconPack[name]) {
-      // Create a new HTML element from the SVG string
-      const template = document.createElement("template");
+	const iconEl = document.querySelectorAll('icon');
+	iconEl.forEach((icon) => {
+		const name = icon.getAttribute('name');
+		if (iconPack[name]) {
+			// Create a new HTML element from the SVG string
+			const template = document.createElement('template');
 
-      template.innerHTML = iconPack[name].trim(); // Avoid extra whitespace creating unexpected text nodes
-      const svgElement = template.content.firstChild;
+			template.innerHTML = iconPack[name].trim(); // Avoid extra whitespace creating unexpected text nodes
+			const svgElement = template.content.firstChild;
 
-      // Replace custom-icon element with the SVG element
-      icon.replaceWith(svgElement);
-    }
-  });
+			// Replace custom-icon element with the SVG element
+			icon.replaceWith(svgElement);
+		}
+	});
 }
 
-document.addEventListener("DOMContentLoaded", addIcons());
+document.addEventListener('DOMContentLoaded', addIcons());
