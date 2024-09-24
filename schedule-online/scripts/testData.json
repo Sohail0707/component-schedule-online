@@ -1,0 +1,55 @@
+{
+	"brand_id": "TWHqif8UkQqu1jxRgRgzDA",
+	"service": {
+		"hours": "3.5",
+		"id": "yq-q2gjnVz7puFQ6QOZkgQ",
+		"name": "Premium",
+		"order": "030",
+		"price": "270.00"
+	},
+	"address": {
+		"street_number": "2021",
+		"street_name": "K St NW",
+		"neighborhood": "Northwest Washington",
+		"city": "Washington",
+		"state": "DC",
+		"zip": "20006",
+		"street": "2021 K St NW",
+		"formatted_address": "2021 K St NW, Washington, DC 20006, USA",
+		"google_place_id": "ChIJYe5cRbe3t4kR-Omjmcvl2lY",
+		"lat": 38.90295680000001,
+		"lon": -77.0457423,
+		"google_place_vicinity": "Washington"
+	},
+	"time_slot": {
+		"position": "ONLY",
+		"start_time": "2024-09-21 12:00",
+		"start_time_display": "2024-09-21 12:00",
+		"end_time_display": "2024-09-21 15:30",
+		"end_time": "2024-09-21 15:30",
+		"working_hours": 3.5,
+		"employee": {
+			"id": "ZwT70gYx3MSGADNmEn7AnQ",
+			"first_name": "Elvis",
+			"last_name": "Kouamegui",
+			"speed_factor": 1
+		},
+		"driving_before_hours": 0.3630555555555556,
+		"driving_before_miles": 14.532624948,
+		"driving_after_hours": 0.36638888888888893,
+		"driving_after_miles": 14.43444833,
+		"impact_hours": 0.3647222222222223,
+		"impact_miles": 14.483536639,
+		"error": null,
+		"hashkey": "6CP6X7SFTD3XE3BNO2U3D7ZWNGMNCJLC"
+	},
+	"first_name": "Sohail",
+	"last_name": "Rana",
+	"phone": "834 851 2213",
+	"email": "sohail2001rana@gmail.com",
+	"notes": "test notes",
+	"cc_number": "**** **** **** 5049",
+	"cc_exp_month": "10",
+	"cc_exp_year": "27",
+	"cc_cvc": "979"
+}

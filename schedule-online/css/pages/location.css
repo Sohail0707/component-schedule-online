@@ -1,5 +1,8 @@
 /* /////////////////////// THE ENTER ADDRESS PAGE ///////////////////////
 ////////////////////////////////////////////////////////////////////// */
+#__SCHEDULE-ONLINE__LARGE .location--input-box {
+	margin-top: 2.4em;
+}
 
 #__SCHEDULE-ONLINE__LARGE .location__prediction--list {
 	list-style: none;
@@ -17,8 +20,7 @@
 #__SCHEDULE-ONLINE__LARGE .location__prediction--list.expand {
 	gap: 0.8em;
 	max-height: 50em;
-	margin-top: 3.6em;
-	padding: 1.2em;
+	margin-top: 2.4em;
 }
 
 #__SCHEDULE-ONLINE__LARGE .location__prediction--el {

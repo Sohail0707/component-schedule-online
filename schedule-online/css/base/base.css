@@ -24,7 +24,7 @@
 	max-width: 112em;
 	margin: 0 auto;
 	padding: 6.4em;
-	overflow: hidden;
+	/* overflow: hidden; */
 }
 
 /* Default values of html tags */

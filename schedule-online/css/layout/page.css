@@ -1,5 +1,13 @@
+#__SCHEDULE-ONLINE__LARGE .schedule-online__main-page-container {
+	display: flex;
+	/* width: calc(200%); */
+	/* background-color: blueviolet; */
+	/* transform: translateX(-50%); */
+}
+
 #__SCHEDULE-ONLINE__LARGE .page {
-  display: flex;
-  flex-direction: column;
-  gap: 3.2em;
+	display: flex;
+	flex-direction: column;
+	gap: 3.2em;
+	width: 100%;
 }

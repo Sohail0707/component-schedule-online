@@ -1,18 +1,19 @@
-@import "base/animations.css";
-@import "base/color-scheme.css";
-@import "base/base.css";
-@import "base/typography.css";
+@import 'base/animations.css';
+@import 'base/color-scheme.css';
+@import 'base/base.css';
+@import 'base/typography.css';
 
-@import "components/buttons.css";
-@import "components/input-field.css";
+@import 'components/buttons.css';
+@import 'components/input-field.css';
+@import 'components/selected-item.css';
 
-@import "layout/page.css";
-@import "layout/navigation.css";
+@import 'layout/page.css';
+@import 'layout/navigation.css';
 
-@import "pages/service.css";
-@import "pages/location.css";
-@import "pages/time-slot.css";
-@import "pages/customer-details.css";
-@import "pages/card-details.css";
-@import "pages/confirmation.css";
-@import "pages/final.css";
+@import 'pages/service.css';
+@import 'pages/location.css';
+@import 'pages/appointment.css';
+@import 'pages/customer-details.css';
+@import 'pages/card-details.css';
+@import 'pages/confirmation.css';
+@import 'pages/final.css';

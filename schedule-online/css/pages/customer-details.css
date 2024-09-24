@@ -1,50 +1,31 @@
-/* ///////////////////// THE CUSTOMER DETAILS PAGE /////////////////////
-///////////////////////////////////////////////////////////////////// */
-#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE
-  .section_customer_details_container {
-  display: flex;
-  flex-direction: column;
-  gap: 3.2em;
+#__SCHEDULE-ONLINE__LARGE .customer-details--container {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: repeat(auto, 3);
+	grid-template-areas:
+		'first-name last-name'
+		'phone email'
+		'note note';
+	column-gap: 2em;
+	row-gap: 3.2em;
 }
 
-#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .name_container,
-#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .contact_container {
-  display: flex;
-  gap: 2.4em;
+#__SCHEDULE-ONLINE__LARGE .first-name--input-box {
+	grid-area: first-name;
 }
 
-/* Separately styling the customer note input box and field as it is different from
-the normal input element */
-#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .customer_notes_box.input_box {
-  height: fit-content !important;
-  padding-top: 3em;
+#__SCHEDULE-ONLINE__LARGE .last-name--input-box {
+	grid-area: last-name;
 }
 
-#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE
-  .customer_notes_box.input_box
-  label {
-  font-size: inherit;
-  position: absolute;
-  top: 1.6em;
-  transform: none;
-  transition: all 0.3s;
-}
-#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE
-  .customer_notes_box.input_box
-  label
-  span {
-  font-size: 2em;
-  font-weight: 500;
-  text-transform: capitalize;
-  color: var(--ScheduleGray__4);
+#__SCHEDULE-ONLINE__LARGE .phone--input-box {
+	grid-area: phone;
 }
 
-#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE
-  .customer_notes_box.input_box
-  .input_field {
-  height: 8em;
-  resize: none;
-  -webkit-font-smoothing: antialiased; /* Chrome, Safari */
-  -moz-osx-font-smoothing: grayscale; /* Firefox on Mac OS X */
-  font-weight: 500;
+#__SCHEDULE-ONLINE__LARGE .email--input-box {
+	grid-area: email;
+}
+
+#__SCHEDULE-ONLINE__LARGE .note--input-box {
+	grid-area: note;
 }

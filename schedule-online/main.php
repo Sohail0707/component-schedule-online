@@ -5,11 +5,12 @@
     <!-- A NESTED CONTAINER THAT WILL CONTAIN THE ACTUAL ELEMENTS -->
     <?php include 'markup/components/indicator.php'; ?>
 
-    <div class="main_page_container">
+    <div class="schedule-online__main-page-container">
       <!-- THIS IS THE PARENT CONTAINER OF ALL THE PAGES OF THIS MODULE -->
-      <?php include 'markup/pages/page__location.php'; ?>
     </div>
 
-    <?php include 'markup/components/navigation-btn.php'; ?>
+    <div class="schedule-online__navigation">
+      <!-- Navigation buttons goes here -->
+    </div>
   </main>
 </section>

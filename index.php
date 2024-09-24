@@ -9,6 +9,6 @@
 </head>
 <body>
         <?php include 'schedule-online/main.php'; ?>
-        <script src="schedule-online/scripts/iconpack.js"></script>
+        <script type="module" src="schedule-online/scripts/main.js"></script>
 </body>
 </html>
