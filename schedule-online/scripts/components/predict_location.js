@@ -37,9 +37,6 @@ function getLocationDetails(placeId) {
 				return component ? component.long_name : null;
 			}
 
-			// This will store the location details
-			const selectedLocationData = {};
-
 			selectedLocationData.street_number = getAddressComponent('street_number', data.result);
 			selectedLocationData.street_name = getAddressComponent('route', data.result);
 			selectedLocationData.neighborhood = getAddressComponent('neighborhood', data.result);
@@ -48,7 +45,6 @@ function getLocationDetails(placeId) {
 			selectedLocationData.zip = getAddressComponent('postal_code', data.result);
 			selectedLocationData.street = `${getAddressComponent('street_number', data.result)} ${getAddressComponent('route', data.result)}`;
 
-			selectedLocationData.formatted_address = data.result.formatted_address;
 			selectedLocationData.google_place_id = data.result.place_id;
 			selectedLocationData.lat = data.result.geometry.location.lat;
 			selectedLocationData.lon = data.result.geometry.location.lng;
@@ -60,6 +56,9 @@ function getLocationDetails(placeId) {
 			console.error('There was a problem with the fetch operation:', error);
 		});
 }
+
+// This will store the location details
+const selectedLocationData = {};
 
 // Function to create the location prediction html elements
 function generateLocationEl(locationData) {
@@ -96,7 +95,8 @@ function generateLocationEl(locationData) {
 		locationEl.addEventListener('click', () => {
 			getLocationDetails(location.place_id); // This will generate the location lat, lon and other details of the selected location
 
-			set_validation_status('location__page', true); // Set the validation status to 'true'
+			set_validation_status('_location', true); // Set the validation status to 'true'
+			selectedLocationData.formatted_address = location.description;
 			INPUT_ELS.location.address_field.value = location.description;
 			mark_as_valid(INPUT_ELS.location.address_field); // Marked as valid
 

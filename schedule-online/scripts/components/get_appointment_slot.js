@@ -15,7 +15,7 @@ export function get_time_slot(lat, lon, hours, startDate, numberOfDays) {
 			return response.json();
 		})
 		.then((data) => {
-			set_validation_status('appointment__page', false);
+			set_validation_status('_appointment', false);
 			const sortedData = data.slots.sort((a, b) => a.start_time_display - b.start_time_display);
 			const endDate = new Date(startDate);
 			endDate.setDate(startDate.getDate() + numberOfDays);
@@ -164,7 +164,7 @@ function generateAppointmentEl(slotData) {
 					});
 					timeSlotEl.classList.add('selected');
 					assign_to_form_data('time_slot', slot);
-					set_validation_status('appointment__page', true);
+					set_validation_status('_appointment', true);
 				}
 			});
 

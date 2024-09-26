@@ -1,5 +1,7 @@
 #__SCHEDULE-ONLINE__LARGE .schedule-online__navigation {
-  margin-top: 3.6em;
-  display: flex;
-  justify-content: end;
+	margin-top: 3.6em;
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: end;
+	gap: 2.4em;
 }

@@ -29,6 +29,7 @@
 }
 /* For textarea */
 #__SCHEDULE-ONLINE__LARGE .note--input-field {
+	font-weight: 400;
 	resize: none;
 }
 

@@ -50,26 +50,36 @@ export function get_services(brandId, htmlObj) {
 			function processService(serviceEls, serviceData, delayFactor) {
 				serviceEls.forEach((serviceEl, index) => {
 					const serviceCard = serviceEl.querySelector('.service--card');
-					let cardData;
+					let cardData = {};
 
 					if (serviceData[index]) {
-						cardData = serviceData[index];
+						cardData['name'] = serviceData[index].name;
+						cardData['id'] = serviceData[index].id;
+						cardData['order'] = serviceData[index].order;
+						cardData['price'] = serviceData[index].price;
+						cardData['hours'] = serviceData[index].duration;
 						serviceCard.addEventListener('click', () => {
 							if (serviceCard.classList.contains('selected')) {
 								serviceCard.classList.remove('selected');
 								remove_form_data('service');
-								set_validation_status('service__page', false);
+								set_validation_status('_service', false);
 							} else {
 								assign_to_form_data('service', cardData);
 								document.querySelectorAll('#__SCHEDULE-ONLINE__LARGE .service--card.selected').forEach((card) => {
 									card.classList.remove('selected');
 								});
 								serviceCard.classList.add('selected');
-								set_validation_status('service__page', true);
+								set_validation_status('_service', true);
 							}
 						});
 
-						serviceCard.innerHTML = getHtml(cardData.name, cardData.price, cardData.area, cardData.duration, cardData.size);
+						serviceCard.innerHTML = getHtml(
+							serviceData[index].name,
+							cardData.price,
+							serviceData[index].area,
+							serviceData[index].duration,
+							serviceData[index].size,
+						);
 						setTimeout(() => {
 							serviceEl.classList.add('flip');
 						}, 60 * (index + delayFactor));
