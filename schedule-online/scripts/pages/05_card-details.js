@@ -19,7 +19,19 @@ import { add_icons } from '../components/iconpack.js';
 
 import { assign_to_input_el, INPUT_ELS, init_input_el, mark_as_invalid, mark_as_valid, add_placeholder } from '../components/input_el.js';
 
+import { INIT_CONFIRMATION_PAGE } from './06_confirmation.js';
+
+// Create a new script element
+const stripeScript = document.createElement('script');
+
+// Set the type and source attributes
+stripeScript.type = 'text/javascript';
+stripeScript.src = 'https://js.stripe.com/v2/';
+
 export function INIT_CARD_DETAILS_PAGE() {
+	// Append the script element to the <head> tag
+	document.head.appendChild(stripeScript);
+
 	assign_to_input_el('card_details', 'card_number_box', document.querySelector('#__SCHEDULE-ONLINE__LARGE .card-number--input-box'));
 	assign_to_input_el('card_details', 'card_number_field', document.querySelector('#__SCHEDULE-ONLINE__LARGE .card-number--input-field'));
 
@@ -52,6 +64,7 @@ export function INIT_CARD_DETAILS_PAGE() {
 			mark_as_invalid(event.target, 'please enter a card number');
 		} else if (luhnAlgorithm(input)) {
 			let convertedValue = `${input.slice(0, 4)} ${input.slice(4, 8)} ${input.slice(8, 12)} ${input.slice(12, 16)}`;
+			assign_to_form_data('cc_number', `**** **** **** ${input.slice(-4)}`);
 			assign_to_billing_data('number', input);
 			input_validation_status.card_number = true;
 			mark_as_valid(event.target);
@@ -75,6 +88,9 @@ export function INIT_CARD_DETAILS_PAGE() {
 		let input = event.target.value;
 
 		if (input === '') {
+			remove_form_data('cc_exp_month');
+			remove_form_data('cc_exp_year');
+
 			remove_billing_data('exp_month');
 			remove_billing_data('exp_year');
 			input_validation_status.expiration_month = false;
@@ -86,6 +102,9 @@ export function INIT_CARD_DETAILS_PAGE() {
 			let convertedValue = `${result.month} / ${result.year}`;
 
 			if (result.isExpired) {
+				remove_form_data('cc_exp_month');
+				remove_form_data('cc_exp_year');
+
 				remove_billing_data('exp_month');
 				remove_billing_data('exp_year');
 				input_validation_status.expiration_month = false;
@@ -94,6 +113,9 @@ export function INIT_CARD_DETAILS_PAGE() {
 				add_placeholder(event.target, convertedValue);
 			}
 			if (!result.isExpired) {
+				assign_to_form_data('cc_exp_month', result.month);
+				assign_to_form_data('cc_exp_year', result.year);
+
 				assign_to_billing_data('exp_month', result.month);
 				assign_to_billing_data('exp_year', result.year);
 				input_validation_status.expiration_month = true;
@@ -118,10 +140,12 @@ export function INIT_CARD_DETAILS_PAGE() {
 	INPUT_ELS.card_details.cvc_field.addEventListener('blur', (event) => {
 		let input = event.target.value;
 		if (input === '') {
+			remove_form_data('cc_cvc');
 			remove_billing_data('cvc');
 			input_validation_status.cvc = false;
 			mark_as_invalid(event.target, 'please enter a CVC');
 		} else if (input.length >= 3 && input.length <= 5) {
+			assign_to_form_data('cc_cvc', input);
 			assign_to_billing_data('cvc', input);
 			input_validation_status.cvc = true;
 			mark_as_valid(event.target);
@@ -152,6 +176,53 @@ export function INIT_CARD_DETAILS_PAGE() {
 			mark_as_valid(event.target);
 		} else {
 			mark_as_invalid(event.target, 'please enter a valid zipcode');
+		}
+	});
+
+	nextBtn.addEventListener('click', async () => {
+		INPUT_ELS.card_details.card_number_field.blur();
+		INPUT_ELS.card_details.expiration_field.blur();
+		INPUT_ELS.card_details.cvc_field.blur();
+		INPUT_ELS.card_details.zipcode_field.blur();
+		if (
+			input_validation_status.card_number +
+				input_validation_status.expiration_month +
+				input_validation_status.expiration_year +
+				input_validation_status.cvc +
+				input_validation_status.zipcode ===
+			5
+		) {
+			set_validation_status('_card_details', true);
+		} else {
+			set_validation_status('_card_details', false);
+		}
+		if (PAGE_INDEX === 4 && validation_status._card_details === true) {
+			nextBtn.disabled = true; // Disable the button to prevent double submissions
+
+			try {
+				console.log('Starting Stripe tokenization...');
+				const stripeToken = await call_stripe();
+				assign_to_form_data('cc_stripe_token', stripeToken);
+				console.log('Stripe tokenization completed successfully.');
+
+				const htmlContent = await loadHTMLContent('/schedule-online/markup/pages/page__confirmation.html');
+				if (htmlContent) {
+					const tempDiv = document.createElement('div');
+					tempDiv.innerHTML = htmlContent;
+					PAGES._card_details.style.display = 'none';
+					main_page_container.appendChild(tempDiv.firstElementChild);
+
+					assign_to_pages_obj('confirmation', document.querySelector('#_SCHEDULE-ONLINE__LARGE .page__confirmation'));
+					set_page_index(5);
+					INIT_CONFIRMATION_PAGE();
+				}
+			} catch (error) {
+				console.error('Error during Stripe tokenization or page loading:', error);
+				if (error.message) {
+					document.querySelector('.payment-errors').textContent = error.message;
+				}
+				nextBtn.disabled = false;
+			}
 		}
 	});
 }
@@ -221,4 +292,18 @@ function checkExpiration(exp) {
 		year: year,
 		isExpired: isExpired,
 	};
+}
+
+function call_stripe() {
+	return new Promise((resolve, reject) => {
+		Stripe.setPublishableKey('pk_live_teLWodrvq2Y45VeKsBquEExH');
+
+		Stripe.card.createToken(BILLING_DATA, function (status, response) {
+			if (response.error) {
+				reject(response.error);
+			} else {
+				resolve(response.id); // Return the token
+			}
+		});
+	});
 }

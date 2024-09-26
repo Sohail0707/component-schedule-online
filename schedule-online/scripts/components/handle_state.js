@@ -1,7 +1,6 @@
 export const BILLING_DATA = {};
 export function assign_to_billing_data(key, value) {
 	BILLING_DATA[key] = value;
-	console.log(BILLING_DATA);
 }
 export function remove_billing_data(key) {
 	delete BILLING_DATA[key];
@@ -10,6 +9,7 @@ export function remove_billing_data(key) {
 export const FORM_DATA = {};
 export function assign_to_form_data(key, value) {
 	FORM_DATA[key] = value;
+	console.log(FORM_DATA);
 }
 export function remove_form_data(key) {
 	delete FORM_DATA[key];
@@ -30,7 +30,7 @@ export const validation_status = {
 	_location: false,
 	_appointment: false,
 	_personal_details: false,
-	_cardDetails: false,
+	_card_details: false,
 	_confirmation: false,
 };
 export function set_validation_status(key, value) {

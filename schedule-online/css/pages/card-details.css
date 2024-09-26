@@ -15,12 +15,12 @@
 }
 
 #__SCHEDULE-ONLINE__LARGE .expiration--input-box {
-	flex-basis: calc(20% - 2em);
-	min-width: 17em;
+	flex-basis: calc(22% - 2em);
+	min-width: 19em;
 }
 
 #__SCHEDULE-ONLINE__LARGE .cvc--input-box {
-	flex-basis: calc(20% - 2em);
+	flex-basis: calc(18% - 2em);
 	min-width: 15em;
 }
 
@@ -28,4 +28,35 @@
 	flex-basis: calc(30% - 2em);
 	min-width: 19em;
 	max-width: 25em;
+}
+
+#__SCHEDULE-ONLINE__LARGE .card-details__terms--container {
+	display: flex;
+	flex-direction: column;
+	gap: 1.6em;
+	margin: 3.2em 0;
+}
+
+#__SCHEDULE-ONLINE__LARGE .card-details--terms {
+	font-size: 1.4em;
+	font-weight: 400;
+	line-height: 1;
+	color: var(--ScheduleRight);
+}
+
+#__SCHEDULE-ONLINE__LARGE .heading {
+	font-size: 2em;
+	font-weight: 400;
+	line-height: 1;
+	color: var(--SchedulePrimary);
+}
+#__SCHEDULE-ONLINE__LARGE .card-details__icon--container {
+	display: flex;
+	align-items: center;
+	gap: 1.2em;
+	margin-top: 1.6em;
+}
+
+#__SCHEDULE-ONLINE__LARGE .card-details--icon {
+	height: 3em;
 }
