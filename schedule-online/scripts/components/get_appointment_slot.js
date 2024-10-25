@@ -3,7 +3,7 @@ import { assign_to_form_data, set_validation_status } from './handle_state.js';
 
 export function get_time_slot(lat, lon, hours, startDate, numberOfDays) {
 	const url =
-		`https://sd.jazzd.cc/rest/scheduling/get_available_appointment_slots` +
+		`https://sd.enterprisejazz.com/rest/scheduling/get_available_appointment_slots` +
 		`?lat=${lat}&lon=${lon}&hours=${hours}&first_day=${startDate.toUTCString()}` +
 		`&number_of_days=${numberOfDays}&timestamp=${new Date().getTime()}`;
 

@@ -5,77 +5,13 @@
 		<!-- A NESTED CONTAINER THAT WILL CONTAIN THE ACTUAL ELEMENTS -->
 		<?php include 'markup/components/indicator.php'; ?>
 
+		<!-- THIS IS THE PARENT CONTAINER OF ALL THE PAGES OF THIS MODULE -->
 		<div class="schedule-online__main-page-container">
-			<!-- THIS IS THE PARENT CONTAINER OF ALL THE PAGES OF THIS MODULE -->
-			<div class="page page__service">
-				<!-- THE SELECT SERVICE PAGE -->
+			<div class="page page__confirmation">
 				<h1 class="page-heading">
-					<span>select one you want</span>
+					<span>Check the details before you schedule</span>
 				</h1>
-
-				<!-- this buttons will be only visible in mobile -->
-				<div class="service__btn-level-container">
-					<button class="service__btn-level service__btn-level--top clicked">
-						<span class="text">top</span>
-					</button>
-
-					<button class="service__btn-level service__btn-level--middle">
-						<span class="text">middle</span>
-					</button>
-
-					<button class="service__btn-level service__btn-level--basic">
-						<span class="text">basic</span>
-					</button>
-				</div>
-
-				<div class="service__category-container">
-					<div class="service__category service__category--top">
-						<span class="service__category--label">
-							<span class="text">top</span>
-						</span>
-						<div class="service__el-container">
-							<span class="service__el-btn--left service__el-btn">
-								<icon name="arrow_left"></icon>
-							</span>
-							<span class="service__el-btn--right service__el-btn">
-								<icon name="arrow_right"></icon>
-							</span>
-							<div class="service__el-container--1">
-								<!-- THis will contain the actual els -->
-							</div>
-						</div>
-					</div>
-
-					<div class="service__category service__category--middle">
-						<span class="service__category--label">
-							<span class="text">middle</span>
-						</span>
-						<div class="service__el-container">
-							<span class="service__el-btn--left service__el-btn">
-								<icon name="arrow_left"></icon>
-							</span>
-							<span class="service__el-btn--right service__el-btn">
-								<icon name="arrow_right"></icon>
-							</span>
-							<div class="service__el-container--1"></div>
-						</div>
-					</div>
-
-					<div class="service__category service__category--basic">
-						<span class="service__category--label">
-							<span class="text">basic</span>
-						</span>
-						<div class="service__el-container">
-							<span class="service__el-btn--left service__el-btn">
-								<icon name="arrow_left"></icon>
-							</span>
-							<span class="service__el-btn--right service__el-btn">
-								<icon name="arrow_right"></icon>
-							</span>
-							<div class="service__el-container--1"></div>
-						</div>
-					</div>
-				</div>
+				<div class="confirmation--container"></div>
 			</div>
 		</div>
 
