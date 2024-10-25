@@ -37,7 +37,7 @@ export function set_validation_status(key, value) {
 	validation_status[key] = value;
 }
 
-export const main_page_container = document.querySelector('#__SCHEDULE-ONLINE__LARGE .schedule-online__main-page-container');
+export const main_page_container = document.querySelector('#__SCHEDULE-ONLINE__LARGE .schedule-online__page-container');
 
 export const navigation_container = document.querySelector('#__SCHEDULE-ONLINE__LARGE .schedule-online__navigation');
 
