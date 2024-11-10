@@ -1,16 +1,5 @@
-import {
-	navigation_container,
-	main_page_container,
-	nextBtn,
-	PAGE_INDEX,
-	PAGES,
-	assign_to_pages_obj,
-	validation_status,
-	loadHTMLContent,
-	set_page_index,
-} from '../components/handle_state.js';
+import { navigation_container, nextBtn, PAGE_INDEX, assign_to_pages_obj } from '../components/handle_state.js';
 import { get_services } from '../components/get_services.js';
-import { INIT_LOCATION_PAGE } from './02_location.js';
 
 let serviceContainerEl;
 
@@ -57,22 +46,5 @@ export function INIT_SERVICE_PAGE() {
 	});
 
 	PAGE_INDEX === 0 ? navigation_container.appendChild(nextBtn) : ''; // Putting the next button into DOM
-	nextBtn.addEventListener('click', () => {
-		if (PAGE_INDEX === 0 && validation_status._service === true) {
-			loadHTMLContent('/schedule-online/markup/pages/page__location.html').then((htmlContent) => {
-				if (htmlContent) {
-					const tempDiv = document.createElement('div');
-					tempDiv.innerHTML = htmlContent;
-
-					PAGES._service.style.display = 'none';
-					main_page_container.appendChild(tempDiv.firstElementChild);
-
-					assign_to_pages_obj('_location', document.querySelector('#__SCHEDULE-ONLINE__LARGE .page__location'));
-					set_page_index(1);
-					INIT_LOCATION_PAGE();
-				}
-			});
-		}
-	});
 }
 INIT_SERVICE_PAGE();

@@ -1,25 +1,14 @@
 import {
-	main_page_container,
-	nextBtn,
-	previousBtn,
-	PAGE_INDEX,
-	PAGES,
-	assign_to_pages_obj,
-	validation_status,
-	loadHTMLContent,
-	set_page_index,
 	set_validation_status,
-	FORM_DATA,
-	BILLING_DATA,
 	assign_to_form_data,
+	remove_form_data,
 	assign_to_billing_data,
 	remove_billing_data,
+	PAGES,
 } from '../components/handle_state.js';
 import { add_icons } from '../components/iconpack.js';
 
 import { assign_to_input_el, INPUT_ELS, init_input_el, mark_as_invalid, mark_as_valid, add_placeholder } from '../components/input_el.js';
-
-import { INIT_CONFIRMATION_PAGE } from './06_confirmation.js';
 
 // Create a new script element
 const stripeScript = document.createElement('script');
@@ -32,17 +21,18 @@ export function INIT_CARD_DETAILS_PAGE() {
 	// Append the script element to the <head> tag
 	document.head.appendChild(stripeScript);
 
-	assign_to_input_el('card_details', 'card_number_box', document.querySelector('#__SCHEDULE-ONLINE__LARGE .card-number--input-box'));
-	assign_to_input_el('card_details', 'card_number_field', document.querySelector('#__SCHEDULE-ONLINE__LARGE .card-number--input-field'));
+	const this_page = PAGES._card_details;
+	assign_to_input_el('card_details', 'card_number_box', this_page.querySelector('.card-number--input-box'));
+	assign_to_input_el('card_details', 'card_number_field', this_page.querySelector('.card-number--input-field'));
 
-	assign_to_input_el('card_details', 'expiration_box', document.querySelector('#__SCHEDULE-ONLINE__LARGE .expiration--input-box'));
-	assign_to_input_el('card_details', 'expiration_field', document.querySelector('#__SCHEDULE-ONLINE__LARGE .expiration--input-field'));
+	assign_to_input_el('card_details', 'expiration_box', this_page.querySelector('.expiration--input-box'));
+	assign_to_input_el('card_details', 'expiration_field', this_page.querySelector('.expiration--input-field'));
 
-	assign_to_input_el('card_details', 'cvc_box', document.querySelector('#__SCHEDULE-ONLINE__LARGE .cvc--input-box'));
-	assign_to_input_el('card_details', 'cvc_field', document.querySelector('#__SCHEDULE-ONLINE__LARGE .cvc--input-field'));
+	assign_to_input_el('card_details', 'cvc_box', this_page.querySelector('.cvc--input-box'));
+	assign_to_input_el('card_details', 'cvc_field', this_page.querySelector('.cvc--input-field'));
 
-	assign_to_input_el('card_details', 'zipcode_box', document.querySelector('#__SCHEDULE-ONLINE__LARGE .zipcode--input-box'));
-	assign_to_input_el('card_details', 'zipcode_field', document.querySelector('#__SCHEDULE-ONLINE__LARGE .zipcode--input-field'));
+	assign_to_input_el('card_details', 'zipcode_box', this_page.querySelector('.zipcode--input-box'));
+	assign_to_input_el('card_details', 'zipcode_field', this_page.querySelector('.zipcode--input-field'));
 
 	init_input_el();
 	add_icons();
@@ -72,6 +62,8 @@ export function INIT_CARD_DETAILS_PAGE() {
 		} else {
 			mark_as_invalid(event.target, 'please enter a valid card number');
 		}
+
+		check_validation_status();
 	});
 
 	//================== Expiration Event Listener ===================//
@@ -126,6 +118,8 @@ export function INIT_CARD_DETAILS_PAGE() {
 		} else {
 			mark_as_invalid(event.target, 'try typing MMYY or MMYYYY');
 		}
+
+		check_validation_status();
 	});
 
 	//================== CVC Event Listener ===================//
@@ -152,6 +146,8 @@ export function INIT_CARD_DETAILS_PAGE() {
 		} else {
 			mark_as_invalid(event.target, 'please enter a valid CVC');
 		}
+
+		check_validation_status();
 	});
 
 	//================== Zipcode Event Listener ===================//
@@ -177,53 +173,8 @@ export function INIT_CARD_DETAILS_PAGE() {
 		} else {
 			mark_as_invalid(event.target, 'please enter a valid zipcode');
 		}
-	});
 
-	nextBtn.addEventListener('click', async () => {
-		INPUT_ELS.card_details.card_number_field.blur();
-		INPUT_ELS.card_details.expiration_field.blur();
-		INPUT_ELS.card_details.cvc_field.blur();
-		INPUT_ELS.card_details.zipcode_field.blur();
-		if (
-			input_validation_status.card_number +
-				input_validation_status.expiration_month +
-				input_validation_status.expiration_year +
-				input_validation_status.cvc +
-				input_validation_status.zipcode ===
-			5
-		) {
-			set_validation_status('_card_details', true);
-		} else {
-			set_validation_status('_card_details', false);
-		}
-		if (PAGE_INDEX === 4 && validation_status._card_details === true) {
-			nextBtn.disabled = true; // Disable the button to prevent double submissions
-
-			try {
-				console.log('Starting Stripe tokenization...');
-				const stripeToken = await call_stripe();
-				assign_to_form_data('cc_stripe_token', stripeToken);
-				console.log('Stripe tokenization completed successfully.');
-
-				const htmlContent = await loadHTMLContent('/schedule-online/markup/pages/page__confirmation.html');
-				if (htmlContent) {
-					const tempDiv = document.createElement('div');
-					tempDiv.innerHTML = htmlContent;
-					PAGES._card_details.style.display = 'none';
-					main_page_container.appendChild(tempDiv.firstElementChild);
-
-					assign_to_pages_obj('confirmation', document.querySelector('#_SCHEDULE-ONLINE__LARGE .page__confirmation'));
-					set_page_index(5);
-					INIT_CONFIRMATION_PAGE();
-				}
-			} catch (error) {
-				console.error('Error during Stripe tokenization or page loading:', error);
-				if (error.message) {
-					document.querySelector('.payment-errors').textContent = error.message;
-				}
-				nextBtn.disabled = false;
-			}
-		}
+		check_validation_status();
 	});
 }
 
@@ -234,6 +185,20 @@ const input_validation_status = {
 	cvc: false,
 	zipcode: false,
 };
+
+function check_validation_status() {
+	if (
+		input_validation_status.card_number &&
+		input_validation_status.expiration_month &&
+		input_validation_status.expiration_year &&
+		input_validation_status.cvc &&
+		input_validation_status.zipcode === true
+	) {
+		set_validation_status('_card_details', true);
+	} else {
+		set_validation_status('_card_details', false);
+	}
+}
 
 function luhnAlgorithm(cardNumber) {
 	let digits = cardNumber.split('').map(Number);
@@ -292,18 +257,4 @@ function checkExpiration(exp) {
 		year: year,
 		isExpired: isExpired,
 	};
-}
-
-function call_stripe() {
-	return new Promise((resolve, reject) => {
-		Stripe.setPublishableKey('pk_live_teLWodrvq2Y45VeKsBquEExH');
-
-		Stripe.card.createToken(BILLING_DATA, function (status, response) {
-			if (response.error) {
-				reject(response.error);
-			} else {
-				resolve(response.id); // Return the token
-			}
-		});
-	});
 }

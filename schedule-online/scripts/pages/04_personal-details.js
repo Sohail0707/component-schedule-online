@@ -1,37 +1,24 @@
-import {
-	main_page_container,
-	nextBtn,
-	previousBtn,
-	PAGE_INDEX,
-	PAGES,
-	assign_to_pages_obj,
-	validation_status,
-	loadHTMLContent,
-	set_page_index,
-	set_validation_status,
-	FORM_DATA,
-	assign_to_form_data,
-} from '../components/handle_state.js';
+import { set_validation_status, assign_to_form_data, PAGES } from '../components/handle_state.js';
 import { add_icons } from '../components/iconpack.js';
 
 import { assign_to_input_el, INPUT_ELS, init_input_el, mark_as_invalid, mark_as_valid, add_placeholder } from '../components/input_el.js';
-import { INIT_CARD_DETAILS_PAGE } from './05_card-details.js';
 
 export function INIT_PERSONAL_DETAILS_PAGE() {
-	assign_to_input_el('personal_details', 'first_name_box', document.querySelector('#__SCHEDULE-ONLINE__LARGE .first-name--input-box'));
-	assign_to_input_el('personal_details', 'first_name_field', document.querySelector('#__SCHEDULE-ONLINE__LARGE .first-name--input-field'));
+	const this_page = PAGES._personal_details;
+	assign_to_input_el('personal_details', 'first_name_box', this_page.querySelector('.first-name--input-box'));
+	assign_to_input_el('personal_details', 'first_name_field', this_page.querySelector('.first-name--input-field'));
 
-	assign_to_input_el('personal_details', 'last_name_box', document.querySelector('#__SCHEDULE-ONLINE__LARGE .last-name--input-box'));
-	assign_to_input_el('personal_details', 'last_name_field', document.querySelector('#__SCHEDULE-ONLINE__LARGE .last-name--input-field'));
+	assign_to_input_el('personal_details', 'last_name_box', this_page.querySelector('.last-name--input-box'));
+	assign_to_input_el('personal_details', 'last_name_field', this_page.querySelector('.last-name--input-field'));
 
-	assign_to_input_el('personal_details', 'phone_box', document.querySelector('#__SCHEDULE-ONLINE__LARGE .phone--input-box'));
-	assign_to_input_el('personal_details', 'phone_field', document.querySelector('#__SCHEDULE-ONLINE__LARGE .phone--input-field'));
+	assign_to_input_el('personal_details', 'phone_box', this_page.querySelector('.phone--input-box'));
+	assign_to_input_el('personal_details', 'phone_field', this_page.querySelector('.phone--input-field'));
 
-	assign_to_input_el('personal_details', 'email_box', document.querySelector('#__SCHEDULE-ONLINE__LARGE .email--input-box'));
-	assign_to_input_el('personal_details', 'email_field', document.querySelector('#__SCHEDULE-ONLINE__LARGE .email--input-field'));
+	assign_to_input_el('personal_details', 'email_box', this_page.querySelector('.email--input-box'));
+	assign_to_input_el('personal_details', 'email_field', this_page.querySelector('.email--input-field'));
 
-	assign_to_input_el('personal_details', 'note_box', document.querySelector('#__SCHEDULE-ONLINE__LARGE .note--input-box'));
-	assign_to_input_el('personal_details', 'note_field', document.querySelector('#__SCHEDULE-ONLINE__LARGE .note--input-field'));
+	assign_to_input_el('personal_details', 'note_box', this_page.querySelector('.note--input-box'));
+	assign_to_input_el('personal_details', 'note_field', this_page.querySelector('.note--input-field'));
 
 	init_input_el();
 	add_icons();
@@ -60,6 +47,8 @@ export function INIT_PERSONAL_DETAILS_PAGE() {
 			input_validation_status.first_name = true;
 			mark_as_valid(event.target);
 		}
+
+		check_validation_status();
 	});
 
 	//================== Last Name Event Listener ====================//
@@ -86,6 +75,8 @@ export function INIT_PERSONAL_DETAILS_PAGE() {
 			input_validation_status.last_name = true;
 			mark_as_valid(event.target);
 		}
+
+		check_validation_status();
 	});
 
 	//================ Phone Number Event Listener =================//
@@ -114,6 +105,8 @@ export function INIT_PERSONAL_DETAILS_PAGE() {
 			mark_as_valid(event.target);
 			add_placeholder(event.target, convertedValue);
 		}
+
+		check_validation_status();
 	});
 
 	//================= Email Address Event Listener =================//
@@ -135,49 +128,13 @@ export function INIT_PERSONAL_DETAILS_PAGE() {
 			input_validation_status.email = true;
 			mark_as_valid(event.target);
 		}
+
+		check_validation_status();
 	});
 
-	//================= Email Address Event Listener =================//
+	//================= Notes Field Event Listener =================//
 	INPUT_ELS.personal_details.note_field.addEventListener('blur', (event) => {
 		assign_to_form_data('notes', event.target.value);
-	});
-
-	nextBtn.addEventListener('click', () => {
-		INPUT_ELS.personal_details.first_name_field.blur();
-		INPUT_ELS.personal_details.last_name_field.blur();
-		INPUT_ELS.personal_details.phone_field.blur();
-		INPUT_ELS.personal_details.email_field.blur();
-		INPUT_ELS.personal_details.note_field.blur();
-
-		if (
-			input_validation_status.first_name +
-				input_validation_status.last_name +
-				input_validation_status.phone_number +
-				input_validation_status.email ===
-			4
-		) {
-			set_validation_status('_personal_details', true);
-			console.log(FORM_DATA);
-		} else {
-			set_validation_status('_personal_details', false);
-		}
-
-		if (PAGE_INDEX === 3 && validation_status._personal_details === true) {
-			loadHTMLContent('/schedule-online/markup/pages/page__card-details.html').then((htmlContent) => {
-				if (htmlContent) {
-					const tempDiv = document.createElement('div');
-					tempDiv.innerHTML = htmlContent;
-
-					PAGES._personal_details.style.display = 'none';
-					main_page_container.appendChild(tempDiv.firstElementChild);
-
-					assign_to_pages_obj('_card_details', document.querySelector('#__SCHEDULE-ONLINE__LARGE .page__card-details'));
-					set_page_index(4);
-
-					INIT_CARD_DETAILS_PAGE();
-				}
-			});
-		}
 	});
 }
 
@@ -187,3 +144,16 @@ const input_validation_status = {
 	phone_number: false,
 	email: false,
 };
+
+function check_validation_status() {
+	if (
+		input_validation_status.first_name &&
+		input_validation_status.last_name &&
+		input_validation_status.phone_number &&
+		input_validation_status.email === true
+	) {
+		set_validation_status('_personal_details', true);
+	} else {
+		set_validation_status('_personal_details', false);
+	}
+}
