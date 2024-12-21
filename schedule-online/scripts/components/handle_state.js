@@ -88,7 +88,7 @@ nextBtn.addEventListener('click', () => {
 				if (validation_status._service === true) {
 					if (PAGES._location) {
 						setTimeout(() => {
-							PAGES._service.replaceWith(PAGES._location);
+							navigateTo(PAGES._location, 'left');
 							PAGE_INDEX++;
 							set_button_visibility();
 						}, 50);
@@ -98,7 +98,7 @@ nextBtn.addEventListener('click', () => {
 								const tempDiv = document.createElement('div');
 								tempDiv.innerHTML = htmlContent;
 								assign_to_pages_obj('_location', tempDiv.firstElementChild);
-								PAGES._service.replaceWith(PAGES._location);
+								navigateTo(PAGES._location, 'left');
 								PAGE_INDEX++;
 								set_button_visibility();
 								INIT_LOCATION_PAGE();
@@ -114,7 +114,7 @@ nextBtn.addEventListener('click', () => {
 				if (validation_status._location === true) {
 					if (PAGES._appointment) {
 						setTimeout(() => {
-							PAGES._location.replaceWith(PAGES._appointment);
+							navigateTo(PAGES._appointment, 'left');
 							PAGE_INDEX++;
 							set_button_visibility();
 						}, 50);
@@ -124,7 +124,7 @@ nextBtn.addEventListener('click', () => {
 								const tempDiv = document.createElement('div');
 								tempDiv.innerHTML = htmlContent;
 								assign_to_pages_obj('_appointment', tempDiv.firstElementChild);
-								PAGES._location.replaceWith(PAGES._appointment);
+								navigateTo(PAGES._appointment, 'left');
 								PAGE_INDEX++;
 								set_button_visibility();
 								INIT_APPOINTMENT_PAGE();
@@ -140,7 +140,7 @@ nextBtn.addEventListener('click', () => {
 				if (validation_status._appointment === true) {
 					if (PAGES._personal_details) {
 						setTimeout(() => {
-							PAGES._appointment.replaceWith(PAGES._personal_details);
+							navigateTo(PAGES._personal_details, 'left');
 							PAGE_INDEX++;
 							set_button_visibility();
 						}, 50);
@@ -150,7 +150,7 @@ nextBtn.addEventListener('click', () => {
 								const tempDiv = document.createElement('div');
 								tempDiv.innerHTML = htmlContent;
 								assign_to_pages_obj('_personal_details', tempDiv.firstElementChild);
-								PAGES._appointment.replaceWith(PAGES._personal_details);
+								navigateTo(PAGES._personal_details, 'left');
 								PAGE_INDEX++;
 								set_button_visibility();
 								INIT_PERSONAL_DETAILS_PAGE();
@@ -171,7 +171,7 @@ nextBtn.addEventListener('click', () => {
 				if (validation_status._personal_details === true) {
 					if (PAGES._card_details) {
 						setTimeout(() => {
-							PAGES._personal_details.replaceWith(PAGES._card_details);
+							navigateTo(PAGES._card_details, 'left');
 							PAGE_INDEX++;
 							set_button_visibility();
 						}, 50);
@@ -181,7 +181,7 @@ nextBtn.addEventListener('click', () => {
 								const tempDiv = document.createElement('div');
 								tempDiv.innerHTML = htmlContent;
 								assign_to_pages_obj('_card_details', tempDiv.firstElementChild);
-								PAGES._personal_details.replaceWith(PAGES._card_details);
+								navigateTo(PAGES._card_details, 'left');
 
 								PAGE_INDEX++;
 								set_button_visibility();
@@ -202,7 +202,7 @@ nextBtn.addEventListener('click', () => {
 				if (validation_status._card_details === true) {
 					if (PAGES._confirmation) {
 						setTimeout(() => {
-							PAGES._card_details.replaceWith(PAGES._confirmation);
+							navigateTo(PAGES._confirmation, 'left');
 							PAGE_INDEX++;
 							set_button_visibility();
 						}, 50);
@@ -220,7 +220,7 @@ nextBtn.addEventListener('click', () => {
 									const tempDiv = document.createElement('div');
 									tempDiv.innerHTML = htmlContent;
 									assign_to_pages_obj('_confirmation', tempDiv.firstElementChild);
-									PAGES._card_details.replaceWith(PAGES._confirmation);
+									navigateTo(PAGES._confirmation, 'left');
 									PAGE_INDEX++;
 									set_button_visibility();
 									INIT_CONFIRMATION_PAGE();
@@ -267,38 +267,37 @@ previousBtn.addEventListener('click', () => {
 	switch (PAGE_INDEX) {
 		case 1:
 			{
-				PAGES._location.replaceWith(PAGES._service);
+				navigateTo(PAGES._service, 'right');
 				PAGE_INDEX--;
 			}
 			break;
 		case 2:
 			{
-				PAGES._appointment.replaceWith(PAGES._location);
+				navigateTo(PAGES._location, 'right');
 				PAGE_INDEX--;
 			}
 			break;
 		case 3:
 			{
-				PAGES._personal_details.replaceWith(PAGES._appointment);
+				navigateTo(PAGES._appointment, 'right');
 				PAGE_INDEX--;
 			}
 			break;
 		case 4:
 			{
-				PAGES._card_details.replaceWith(PAGES._personal_details);
+				navigateTo(PAGES._confirmation, 'right');
 				PAGE_INDEX--;
 			}
 			break;
 		case 5:
 			{
-				PAGES._confirmation.replaceWith(PAGES._card_details);
+				navigateTo(PAGES._card_details, 'right');
 				PAGE_INDEX--;
 			}
 			break;
 
 		default:
 			console.log(`no page found for ${PAGE_INDEX}`);
-
 			break;
 	}
 	set_button_visibility();
@@ -331,48 +330,86 @@ function set_button_visibility() {
 		case 1:
 			{
 				navigation_container.contains(scheduleBtn) ? scheduleBtn.remove() : '';
+				navigation_container.contains(nextBtn) ? nextBtn.remove() : '';
+
 				navigation_container.contains(previousBtn) ? '' : navigation_container.appendChild(previousBtn);
-				navigation_container.contains(nextBtn) ? '' : navigation_container.appendChild(nextBtn);
+				navigation_container.appendChild(nextBtn);
 			}
 
 			break;
 		case 2:
 			{
 				navigation_container.contains(scheduleBtn) ? scheduleBtn.remove() : '';
+				navigation_container.contains(nextBtn) ? nextBtn.remove() : '';
+
 				navigation_container.contains(previousBtn) ? '' : navigation_container.appendChild(previousBtn);
-				navigation_container.contains(nextBtn) ? '' : navigation_container.appendChild(nextBtn);
+				navigation_container.appendChild(nextBtn);
 			}
 
 			break;
 		case 3:
 			{
 				navigation_container.contains(scheduleBtn) ? scheduleBtn.remove() : '';
+				navigation_container.contains(nextBtn) ? nextBtn.remove() : '';
+
 				navigation_container.contains(previousBtn) ? '' : navigation_container.appendChild(previousBtn);
-				navigation_container.contains(nextBtn) ? '' : navigation_container.appendChild(nextBtn);
+				navigation_container.appendChild(nextBtn);
 			}
 
 			break;
 		case 4:
 			{
 				navigation_container.contains(scheduleBtn) ? scheduleBtn.remove() : '';
+				navigation_container.contains(nextBtn) ? nextBtn.remove() : '';
+
 				navigation_container.contains(previousBtn) ? '' : navigation_container.appendChild(previousBtn);
-				navigation_container.contains(nextBtn) ? '' : navigation_container.appendChild(nextBtn);
+				navigation_container.appendChild(nextBtn);
 			}
 
 			break;
 		case 5:
 			{
-				navigation_container.contains(nextBtn) ? nextBtn.remove() : '';
-				navigation_container.contains(previousBtn) ? previousBtn.remove() : '';
 				navigation_container.contains(scheduleBtn) ? scheduleBtn.remove() : '';
+				navigation_container.contains(nextBtn) ? nextBtn.remove() : '';
 
+				navigation_container.contains(previousBtn) ? '' : navigation_container.appendChild(previousBtn);
 				navigation_container.appendChild(scheduleBtn);
-				navigation_container.appendChild(previousBtn);
 			}
 
 			break;
 
 		default:
 			break;
+	}
+}
+
+function navigateTo(newEl, direction = ['left', 'right']) {
+	for (const [name, currentEl] of Object.entries(PAGES)) {
+		if (document.contains(currentEl)) {
+			// console.log(newEl.offsetHeight);
+			// main_page_container.style.maxHeight = `${newEl.offsetHeight}px`;
+			if (direction === 'left') {
+				currentEl.classList.add('exit-left');
+				newEl.classList.add('enter-left');
+				main_page_container.appendChild(newEl);
+				setTimeout(() => {
+					currentEl.classList.remove('exit-left');
+					newEl.classList.remove('enter-left');
+					currentEl.remove();
+				}, 300);
+			}
+
+			if (direction === 'right') {
+				currentEl.classList.add('exit-right');
+				newEl.classList.add('enter-right');
+				main_page_container.appendChild(newEl);
+				setTimeout(() => {
+					currentEl.classList.remove('exit-right');
+					newEl.classList.remove('enter-right');
+					currentEl.remove();
+				}, 300);
+			}
+			break;
+		}
 	}
 }

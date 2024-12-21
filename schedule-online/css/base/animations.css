@@ -4,7 +4,7 @@
 		opacity: 0;
 	}
 	100% {
-		transform: 0;
+		transform: translateX(0%);
 		opacity: 1;
 	}
 }
@@ -44,5 +44,52 @@
 	}
 	100% {
 		transform: translateY(-50%) rotate(360deg);
+	}
+}
+
+/* PAge animations */
+@keyframes slideLeftExit {
+	0% {
+		transform: translateX(0%);
+		opacity: 1;
+	}
+
+	100% {
+		transform: translateX(-100%);
+		opacity: 0;
+	}
+}
+@keyframes slideLeftEnter {
+	0% {
+		transform: translateX(100%);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateX(0%);
+		opacity: 1;
+	}
+}
+
+@keyframes slideRightExit {
+	0% {
+		transform: translateX(0%);
+		opacity: 1;
+	}
+
+	100% {
+		transform: translateX(100%);
+		opacity: 0;
+	}
+}
+@keyframes slideRightEnter {
+	0% {
+		transform: translateX(-100%);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateX(0%);
+		opacity: 1;
 	}
 }
