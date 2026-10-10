@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Book online | {brand}</title>
+  <meta name="description" content="Demo of the Schedule Online booking module: the full seven-step booking form." />
+  <link rel="stylesheet" href="schedule-online/css/schedule.css" />
+  <link rel="stylesheet" href="demo/demo.css" />
+  <script type="module" src="demo/demo.js"></script>
+</head>
+<body>
+  <div class="demo-bar">
+    <p>Demo: the same booking module, configured for three different businesses.</p>
+    <div class="switcher" role="group" aria-label="Switch demo brand">
+      <button type="button" data-switch-brand="shine">Shine (blue)</button>
+      <button type="button" data-switch-brand="evergreen">Evergreen (green)</button>
+      <button type="button" data-switch-brand="redline">Redline (red)</button>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <a class="logo" href="index.html" data-keep-brand data-brand-name>Shine Mobile Detailing</a>
+    <nav><a href="index.html" data-keep-brand>Home</a></nav>
+  </header>
+
+  <main>
+    <div class="booking-intro">
+      <h1>Book an appointment</h1>
+      <p>Choose a service, your address and a time. Payment details are only used to hold the booking.</p>
+    </div>
+    <p class="test-card">
+      Demo mode, nothing is charged. Use test card <code>4242 4242 4242 4242</code>, any future expiry date,
+      any 3-digit CVC and any 5-digit ZIP.
+    </p>
+    <div data-demo-mount="large"></div>
+  </main>
+
+  <footer class="site-footer">Demo build of the Schedule Online booking module. All businesses shown are fictional.</footer>
+</body>
+</html>

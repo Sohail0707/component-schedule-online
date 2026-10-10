@@ -1,0 +1,947 @@
+/* /////////////////// THE SELECT SERVICE PAGE ///////////////////
+/////////////////////////////////////////////////////////////// */
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .select_level_container {
+  /* this section will be only visible in mobile device. This is devided into three equal 
+  columns. Each column contains a button. This entire container will stick to the top if 
+  scrolled down */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  padding: 1.2em 0;
+  position: relative;
+  margin-bottom: 1.2em;
+  margin-top: -1.2em;
+  z-index: 2;
+  display: none;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .select_level_container::after {
+  /* This will be the background of the buttons sliding area */
+  content: "";
+  height: calc(100% - 2.4em);
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 0.8em;
+  background: var(--ScheduleBlack__1);
+  z-index: -1;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .select_level_container .btn__level {
+  /* The button to navigate between different levels of services */
+  text-align: center;
+  font-size: inherit;
+  border: none;
+  padding: 1.2em;
+  background: transparent;
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .select_level_container .btn__level span {
+  /* Separate text element of the button select level */
+  line-height: 1;
+  text-transform: uppercase;
+  font-size: 1.6em;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: var(--ScheduleBlack);
+  transition: color 0.3s;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .select_level_container .selected_button_indicator {
+  /* it is the sliding indicator of the buttons */
+  width: calc(100% / 3);
+  height: calc(100% - 2.4em);
+  position: absolute;
+  left: 0;
+  border-radius: 0.8em;
+  transform: translateX(0);
+  z-index: -1;
+  background: var(--ScheduleHighlight);
+  transition: all 0.3s;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .btn__level.selected span {
+  /* The text of the button that is been selected */
+  color: var(--ScheduleWhite) !important;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .section_service_container {
+  width: 100%;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  margin: -3em 0;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .service_category_container {
+  /* including the label and the service container */
+  display: grid;
+  grid-template-columns: auto 1fr;
+  width: 100%;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .service_page .label {
+  /* label that mentioned at the bigining of each service level */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+  margin: 3em 0;
+  font-size: inherit;
+  transform: rotate(180deg);
+  background: var(--ScheduleBlack);
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .service_page .label span {
+  /* Separated text of each service label */
+  writing-mode: vertical-rl;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1;
+  font-size: 1.6em;
+  font-weight: 600;
+  letter-spacing: 0.256em;
+  color: var(--ScheduleWhite__2);
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .service_container {
+  /* Outer container of each service level */
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .btn__scr {
+  /* scroll right and left button */
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 50%;
+  transform: translateY(-50%);
+  height: calc(100% - 6em);
+  padding: 0.8em;
+  border: none;
+  background: rgba(100, 100, 100, 0.3);
+  backdrop-filter: blur(0.2em);
+  cursor: pointer;
+  z-index: 5;
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .btn__scr .icon {
+  color: var(--ScheduleWhite);
+  stroke-width: 0.2em;
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .scrl__right {
+  right: 0;
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .scrl__left {
+  left: 0;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .left .scrl__left {
+  /* If the container has the class 'left', the left scroll button will be hidden */
+  display: none !important;
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .left .scrl__right {
+  display: flex;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .right .scrl__right {
+  /* If the container has the class 'right', the right scroll button will be hidden */
+  display: none !important;
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .right .scrl__left {
+  display: flex;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .service_container__1 {
+  /* One level nested container from the main container */
+  position: relative;
+  overflow-x: hidden;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .service_container__2 {
+  /* Two level nested container from the main container */
+  display: flex;
+  gap: 0.8em;
+  width: fit-content;
+  padding: 3em 0.8em;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .service_card {
+  /* The outer contaner of each service card */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2em;
+  padding: 1.8em;
+  width: 15em;
+  height: 21.8em;
+  border: 0.15em solid transparent;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .top_category_container .service_card {
+  /* Different background color for top level service card */
+  background: var(--SchedulePrimary__4);
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .middle_category_container .service_card {
+  /* Different background color for mid level service card */
+  background: var(--SchedulePrimary__3);
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .basic_category_container .service_card {
+  /* Different background color for basic level service card */
+  background: var(--SchedulePrimary__2);
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .service_card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 1.2em 2em rgba(0, 0, 0, 0.12);
+  border: 0.15em solid var(--ScheduleHighlight);
+}
+
+/* Editing the service card that is been selected */
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .selected_card.service_card {
+  /* pointer-events: none; */
+  transform: scale(1.03);
+  box-shadow: 0 1.2em 2em rgba(0, 0, 0, 0.12);
+  background: var(--ScheduleHighlight);
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .selected_card .service_title {
+  color: var(--ScheduleWhite__2) !important;
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .selected_card .service_price {
+  color: var(--ScheduleWhite);
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .selected_card .service_est_time {
+  color: var(--ScheduleWhite__2);
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .selected_card .service_description {
+  color: var(--ScheduleWhite__2);
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .service_title {
+  /* the title of each service card */
+  font-size: 1.6em;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.136em;
+  line-height: 1.2;
+  color: var(--ScheduleBlack);
+  pointer-events: none;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .service_price {
+  /* the price mentioned on each service card */
+  font-size: 3.2em;
+  line-height: 1;
+  font-weight: 300;
+  color: var(--SchedulePrimary);
+  pointer-events: none;
+  margin-top: auto;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .service_est_time {
+  /* estimate time mentioned on each service card */
+  font-size: 1.4em;
+  line-height: 1;
+  text-transform: capitalize;
+  font-weight: 500;
+  color: var(--SchedulePrimary);
+  pointer-events: none;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .service_description {
+  /* thesmall description mentioned on each service card */
+  font-size: 1.2em;
+  line-height: 1.2;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--ScheduleGray__3);
+  pointer-events: none;
+}
+
+/* #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .top_category_container .service_description {
+  color: var(--ScheduleWhite__2);
+} */
+
+/* /////////////////////// THE ENTER ADDRESS PAGE ///////////////////////
+////////////////////////////////////////////////////////////////////// */
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .section_location_container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .address_box {
+  margin-top: 1.6em;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .location_list_container ul {
+  /* The main container where the address suggestions are gonna place */
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+
+  transition: max-height 0.3s ease-in-out;
+  overflow: hidden;
+  max-height: 0;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .location_list_container ul.expanding {
+  /* animate class */
+  max-height: 50em;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .location_list_container ul.collapsing {
+  /* animate class */
+  max-height: 0;
+}
+
+/* animation for the list */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-30%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-30%);
+  }
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .location_list_container li {
+  /* Outer container of each location's suggestion element */
+  display: flex;
+  align-items: center;
+  padding: 0.8em 2.4em;
+  min-height: 5em;
+  background: var(--ScheduleBlack__1);
+  border: 0.2em solid transparent;
+  cursor: pointer;
+  font-size: inherit;
+
+  opacity: 0; /* Start off as transparent */
+  animation: fadeIn 0.3s forwards;
+  animation-delay: calc(0.1s * var(--index)); /* Variable delay based on item index */
+  transition: border 0.3s;
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .location_list_container li span {
+  /* Separated text element of the location suggestion */
+  font-size: 1.6em;
+}
+
+/* CSS class for hiding the list items */
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .location_list_container li.fade-out {
+  opacity: 1;
+  animation: fadeOut 0.3s forwards;
+  animation-delay: calc(0.1s * var(--index)); /* Variable delay based on item index */
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .location_list_container li:hover {
+  border: 0.2em solid var(--ScheduleHighlight);
+}
+
+/* //////////////////// THE SELECT TIME SLOT PAGE ////////////////////
+/////////////////////////////////////////////////////////////////// */
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .section_time_slot_container {
+  display: flex;
+  flex-direction: column;
+  gap: 3.6em;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .date_service_container {
+  /* The top bar of the time slot page that contains the recent input of the user and
+  input field to select a date */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4.8em;
+  padding-top: 1.2em;
+  padding-bottom: 1.6em;
+  z-index: 5;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .date_service_container .date_box {
+  display: flex;
+  box-shadow: 0 0 0 0.15em var(--SchedulePrimary);
+  padding: 0.8em 1.6em;
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .date_service_container .date_box input[type="date"] {
+  background: transparent;
+  font-size: 1.6em;
+  text-transform: uppercase;
+  color: var(--SchedulePrimary);
+  border: none;
+  outline: none;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .slot_list {
+  /* The container that contains the time slot elements */
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .slot {
+  /* The main outer container of a time slot element */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6.4em;
+  padding: 1.2em 1.6em;
+  border: 0.2em solid transparent;
+  color: var(--ScheduleBlack);
+  background: var(--ScheduleBlack__1);
+  transition: border 0.2s;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .last_slot_of_date {
+  /* giving a margin bottom for the last same date */
+  margin-bottom: 2.4em;
+}
+
+/* EDITING THE SLOT LABELS */
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .slot_label {
+  display: flex;
+  align-items: center;
+  padding: 1.4em 2.4em;
+  background: var(--ScheduleGray__1);
+  z-index: 4;
+  display: none;
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .slot_label .slot_date,
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .slot_label .slot_day {
+  color: var(--ScheduleWhite);
+  font-weight: 500;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .slot_label .day_date_box {
+  justify-content: space-between;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .slot:hover {
+  /* hover effect on each slot */
+  border: 0.2em solid var(--ScheduleHighlight);
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .day_date_box,
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .start_end_time_box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: capitalize;
+  font-size: inherit;
+  width: 24em;
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .day_date_box span,
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .start_end_time_box span {
+  font-size: 1.6em;
+  font-weight: 400;
+  line-height: 1;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .unavailable_comment {
+  /* The comment element for the already booked slots */
+  font-size: 1.6em;
+  width: max-content;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .slot span {
+  /* all the texts inside each slot */
+  display: inline-block;
+  width: 100%;
+  min-width: fit-content;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .slot .slot_date,
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .slot .slot_end_time {
+  text-align: right;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .slot .icon {
+  color: var(--ScheduleGray__2);
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .btn_select_slot {
+  /* button at the end of each slot */
+  font-size: inherit;
+  border: none;
+  display: flex;
+  border-radius: 0.6em;
+  padding: 1.2em 2em;
+  background: var(--SchedulePrimary__1);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .btn_select_slot span {
+  font-size: 1.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--ScheduleWhite);
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .btn_select_slot:hover {
+  background: var(--ScheduleHighlight);
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .btn__icon_box {
+  position: relative;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .slot [name="cross_circle_outline"] {
+  /* The icon element that will be visible if a slot is selected */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .slot [name="cross_circle_outline"] .icon {
+  height: 3em;
+  width: 3em;
+  color: var(--ScheduleHighlight);
+  stroke-width: 0.15em;
+}
+
+/* Separately Styling the Time slot element if the slot is disabled */
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .disabled.slot {
+  /* it will become unclickable */
+  pointer-events: none;
+  color: var(--ScheduleGray__1) !important;
+  background: rgba(0, 0, 0, 0.04);
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .disabled .slot_date,
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .disabled .slot_day {
+  color: var(--ScheduleGray__1);
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .disabled .btn_select_slot {
+  background: var(--ScheduleBlack__1);
+}
+
+/* Sepatarely Styling the Time slot element if the slot is selected */
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .selected.slot {
+  color: var(--ScheduleHighlight) !important;
+  background: var(--SchedulePrimary__2);
+  border: 0.2em solid var(--ScheduleHighlight);
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .selected .btn_select_slot {
+  opacity: 0;
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .selected [name="cross_circle_outline"] {
+  opacity: 1;
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .selected .slot_date {
+  color: var(--ScheduleHighlight);
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .btn_see_more {
+  /* see more button in the time slot page */
+  text-align: center;
+  position: relative;
+  font-size: inherit;
+  border-bottom-left-radius: 0.8em;
+  border-bottom-right-radius: 0.8em;
+  width: 100%;
+  border: none;
+  padding: 1.6em;
+  background: var(--SchedulePrimary__1);
+  cursor: pointer;
+  display: none;
+  transition: background 0.3s;
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .btn_see_more span {
+  font-size: 2em;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--ScheduleWhite);
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .btn_see_more:hover {
+  background: var(--ScheduleHighlight);
+}
+
+/* ///////////////////// THE CUSTOMER DETAILS PAGE /////////////////////
+///////////////////////////////////////////////////////////////////// */
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .section_customer_details_container {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2em;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .name_container,
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .contact_container {
+  display: flex;
+  gap: 2.4em;
+}
+
+/* Separately styling the customer note input box and field as it is different from
+the normal input element */
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .customer_notes_box.input_box {
+  height: fit-content !important;
+  padding-top: 3em;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .customer_notes_box.input_box label {
+  font-size: inherit;
+  position: absolute;
+  top: 1.6em;
+  transform: none;
+  transition: all 0.3s;
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .customer_notes_box.input_box label span {
+  font-size: 2em;
+  font-weight: 500;
+  text-transform: capitalize;
+  color: var(--ScheduleGray__4);
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .customer_notes_box.input_box .input_field {
+  height: 8em;
+  resize: none;
+  -webkit-font-smoothing: antialiased; /* Chrome, Safari */
+  -moz-osx-font-smoothing: grayscale; /* Firefox on Mac OS X */
+  font-weight: 500;
+}
+
+/* /////////////////////// THE CARD DETAILS PAGE ///////////////////////
+///////////////////////////////////////////////////////////////////// */
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .card_details_container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 2.4em;
+  row-gap: 3.2em;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .card_number_box {
+  flex: 1;
+  min-width: 25em;
+  max-width: 100%;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .expiration_date_box {
+  flex: 1;
+  min-width: 18em;
+  max-width: 30em;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .billing_zipcode_box {
+  flex: 1;
+  min-width: 25em;
+  max-width: 25em;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .cvv_box {
+  flex: 1;
+  min-width: 10em;
+  max-width: 13em;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .conditions_box {
+  /* Container that contains some terms comments */
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+  margin-left: auto;
+  flex: 1;
+  min-width: fit-content;
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .condition {
+  font-size: 1.4em;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--ScheduleRight);
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .card_preview_container {
+  /* The main container where the card images are placed.  */
+  margin-top: 4.8em;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .card_preview_tagline {
+  font-size: inherit;
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .card_preview_tagline span {
+  font-size: 2.4em;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--SchedulePrimary);
+  text-transform: capitalize;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .card_preview_box {
+  display: flex;
+  gap: 1.2em;
+  margin-top: 2.4em;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .card_img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 4.2em;
+  width: 7.2em;
+  border: 0.15em solid var(--ScheduleGray__4);
+  border-radius: 0.8em;
+  overflow: hidden;
+  background: var(--ScheduleWhite);
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .card_img img {
+  width: 100%;
+}
+
+/* //////////////////////// THE CONFIRMATION PAGE ////////////////////////
+/////////////////////////////////////////////////////////////////////// */
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .section_confirmation_container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: repeat(7, auto);
+  column-gap: 6.4em;
+  row-gap: 3.6em;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .attention {
+  font-weight: 400;
+  font-size: 0.7em;
+  color: var(--ScheduleRight);
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .labels span {
+  /* The labels that mentioned before each input description */
+  text-transform: capitalize;
+  font-size: 2em;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--SchedulePrimary);
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .service_name_preview span {
+  text-transform: uppercase;
+  font-size: 2em;
+  font-weight: 500;
+  color: var(--ScheduleBlack);
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .appointment_time_preview,
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .service_location_preview {
+  font-size: 2em;
+  font-weight: 500;
+  color: var(--ScheduleGray__3);
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .customer_details_box {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .customer_phone_preview,
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .customer_email_preview,
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .billing_details_preview {
+  font-size: 2em;
+  font-weight: 400;
+  color: var(--ScheduleGray__3);
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .customer_name_preview,
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .total_amount_preview {
+  font-size: 2em;
+  font-weight: 500;
+  color: var(--ScheduleBlack);
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .service_note_preview {
+  font-size: 1.6em;
+  color: var(--ScheduleGray__3);
+}
+
+/* //////////////////// THE COMPLETE PAGE / LAST PAGE ////////////////////
+/////////////////////////////////////////////////////////////////////// */
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .complete_page .greeting_txt {
+  font-size: inherit;
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .complete_page .greeting_txt span {
+  font-size: 2em;
+  line-height: 1.5;
+  text-transform: capitalize;
+  font-weight: 500;
+  color: var(--ScheduleBlack);
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .complete_page .successful_message span {
+  font-size: 1.6em;
+  color: var(--ScheduleGray__3);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .complete_page .successful_message .highlight {
+  color: var(--SchedulePrimary);
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .complete_page .terms_heading {
+  font-size: inherit;
+  margin-top: 6.4em;
+  margin-bottom: 1.2em;
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .complete_page .terms_heading span {
+  font-size: 1.6em;
+  font-weight: 500;
+  line-height: 1.5;
+  text-transform: capitalize;
+  color: var(--ScheduleBlack);
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .complete_page .contact_info_box {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 1.6em;
+  row-gap: 0.8em;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .complete_page .contact_info_box .contact_heading {
+  font-size: 1.6em;
+  color: var(--ScheduleBlack);
+  font-weight: 500;
+  display: inline-block;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .complete_page .contact_info_box a {
+  width: fit-content;
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .complete_page .contact_info_box .email,
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .complete_page .contact_info_box .phone {
+  color: var(--SchedulePrimary);
+  font-size: 1.6em;
+  font-weight: 400;
+  width: max-content;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .complete_page .contact_info_box a {
+  text-decoration: none;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .complete_page .contact_info_box .i {
+  /* The icons before each contact info */
+  height: 1.2em;
+  width: 1.2em;
+  margin-right: 0.6em;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .complete_page .note_box {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 2.4em;
+  margin-top: 3.2em;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .complete_page .note_box .note_heading {
+  text-transform: capitalize;
+  font-style: italic;
+  font-size: 1.4em;
+  font-weight: 400;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .complete_page .note_box .note {
+  font-weight: 400;
+  font-size: 1.4em;
+  color: var(--ScheduleRight);
+  font-style: italic;
+}
+
+/* ////////////// THE SCHEDULING APPOINTMENT ANIMATION ELEMENT //////////////
+////////////////////////////////////////////////////////////////////////// */
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .animation_background {
+  /* The main container of the animation that will displayed during the scheduling
+  to show different process of scheduling an appointment */
+  color: var(--ScheduleHighlight);
+  display: flex;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--ScheduleWhite__2);
+  backdrop-filter: blur(1em);
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .animation_background.ERROR {
+  color: var(--ScheduleWrong);
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .animation_background.SUCCESS {
+  color: var(--ScheduleRight);
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .animation_background .animation_container {
+  display: flex;
+  align-items: center;
+  gap: 2.4em;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .animation_background .animation_container #process_indication {
+  height: 5.6em;
+  width: 5.6em;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE
+  .animation_background
+  .animation_container
+  #process_indication.spin_animation {
+  background: url(../assets/loading.png);
+  background-size: cover;
+  animation: spin 1s linear infinite;
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .animation_background .animation_container #process_indication .i {
+  color: inherit;
+  height: 100%;
+  width: 100%;
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .animation_background .animation_container #process_indication .icon {
+  height: 100%;
+  width: 100%;
+  stroke-width: 0.2em;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .animation_background .animation_container .process_text {
+  font-size: 3.2em;
+  font-weight: 500;
+  line-height: 1;
+  color: inherit;
+  text-transform: capitalize;
+}

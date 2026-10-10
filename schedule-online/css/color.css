@@ -1,0 +1,123 @@
+/* Colour themes.
+   Each site picks a theme with the color_scheme attribute on the module's root element:
+   <div id="__SCHEDULE_ONLINE_LARGE" ... color_scheme="SCHEDULE_LARGE__1">
+   Add a new theme by copying a block and changing the values. No other file needs to change. */
+
+/* ---------- Full booking form ---------- */
+
+/* 1. Ocean blue */
+[color_scheme="SCHEDULE_LARGE__1"] {
+  --ScheduleHighlight: rgb(13, 128, 242);
+  --SchedulePrimary: #155ba1;
+  --SchedulePrimary__1: hsl(210, 60%, 60%);
+  --SchedulePrimary__2: rgba(21, 91, 161, 0.15);
+  --SchedulePrimary__3: rgba(21, 91, 161, 0.3);
+  --SchedulePrimary__4: rgba(21, 91, 161, 0.5);
+}
+
+/* 2. Emerald */
+[color_scheme="SCHEDULE_LARGE__2"] {
+  --ScheduleHighlight: rgb(16, 185, 129);
+  --SchedulePrimary: #047857;
+  --SchedulePrimary__1: hsl(160, 50%, 48%);
+  --SchedulePrimary__2: rgba(4, 120, 87, 0.15);
+  --SchedulePrimary__3: rgba(4, 120, 87, 0.3);
+  --SchedulePrimary__4: rgba(4, 120, 87, 0.5);
+}
+
+/* 3. Crimson */
+[color_scheme="SCHEDULE_LARGE__3"] {
+  --ScheduleHighlight: rgb(225, 29, 72);
+  --SchedulePrimary: #9f1239;
+  --SchedulePrimary__1: hsl(345, 60%, 60%);
+  --SchedulePrimary__2: rgba(159, 18, 57, 0.15);
+  --SchedulePrimary__3: rgba(159, 18, 57, 0.3);
+  --SchedulePrimary__4: rgba(159, 18, 57, 0.5);
+}
+
+/* Shared by every theme of the full form */
+[color_scheme^="SCHEDULE_LARGE__"] {
+  --ScheduleRightHighlight: rgb(10, 194, 74);
+  --ScheduleRight: hsl(141, 80%, 38%);
+  --ScheduleRight__1: rgba(10, 194, 74, 0.15);
+
+  --ScheduleWrong: rgb(194, 10, 10);
+  --ScheduleWrong__1: rgba(194, 10, 10, 0.15);
+
+  --ScheduleBlack: #000;
+  --ScheduleBlack__1: rgba(0, 0, 0, 0.1);
+  --ScheduleBlack__2: rgba(0, 0, 0, 0.3);
+  --ScheduleBlack__3: rgba(0, 0, 0, 0.6);
+
+  --ScheduleWhite: #fff;
+  --ScheduleWhite__1: rgba(255, 255, 255, 0.3);
+  --ScheduleWhite__2: rgba(255, 255, 255, 0.6);
+
+  --ScheduleGray__1: #a6a6a6;
+  --ScheduleGray__2: #8b8b8b;
+  --ScheduleGray__3: #5d5d5d;
+  --ScheduleGray__4: #464646;
+}
+
+/* ---------- Compact service picker ---------- */
+
+/* 1. Ocean blue */
+[color_scheme="SCHEDULE_SMALL__1"] {
+  --brand: rgb(13, 128, 242);
+  --brand_dark: rgb(21, 91, 161);
+  --brand_50: rgba(21, 91, 161, 0.5);
+  --brand_30: rgba(21, 91, 161, 0.3);
+  --brand_15: rgba(21, 91, 161, 0.15);
+}
+
+/* 2. Emerald */
+[color_scheme="SCHEDULE_SMALL__2"] {
+  --brand: rgb(16, 185, 129);
+  --brand_dark: rgb(4, 120, 87);
+  --brand_50: rgba(4, 120, 87, 0.5);
+  --brand_30: rgba(4, 120, 87, 0.3);
+  --brand_15: rgba(4, 120, 87, 0.15);
+}
+
+/* 3. Crimson */
+[color_scheme="SCHEDULE_SMALL__3"] {
+  --brand: rgb(225, 29, 72);
+  --brand_dark: rgb(159, 18, 57);
+  --brand_50: rgba(159, 18, 57, 0.5);
+  --brand_30: rgba(159, 18, 57, 0.3);
+  --brand_15: rgba(159, 18, 57, 0.15);
+}
+
+/* The picker's tokens, built from the theme's brand colours */
+[color_scheme^="SCHEDULE_SMALL__"] {
+  --schedule_button_background: var(--brand);
+  --schedule_button_label: white;
+
+  --ui_background: rgba(0, 0, 0, 0.1);
+  --ui_border: var(--brand);
+
+  --input_box_icon: var(--brand_dark);
+  --input_text: var(--brand_dark);
+  --input_placeholder: rgba(0, 0, 0, 0.6);
+
+  --dropdown_border: white;
+  --dropdown_button_label: black;
+  --dropdown_button__active_label: white;
+  --dropdown_button_indicator: var(--brand);
+  --dropdown_button_container_background: rgba(0, 0, 0, 0.1);
+
+  --service_card_title: black;
+  --service_card_price: var(--brand_dark);
+  --service_card_time: var(--brand_dark);
+  --service_card_description: #5d5d5d;
+  --service_card_border: var(--brand);
+  --service_card_active_title: rgba(255, 255, 255, 0.6);
+  --service_card_active_price: rgba(255, 255, 255, 0.6);
+  --service_card_active_time: rgba(255, 255, 255, 0.6);
+  --service_card_active_description: rgba(255, 255, 255, 0.6);
+  --service_card_active_background: var(--brand);
+
+  --top_service_card_background: var(--brand_50);
+  --middle_service_card_background: var(--brand_30);
+  --basic_service_card_background: var(--brand_15);
+}

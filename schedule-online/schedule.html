@@ -1,0 +1,436 @@
+<div id="__SCHEDULE_ONLINE_LARGE" class="__SCHEDULE_ONLINE_LARGE" color_scheme="SCHEDULE_LARGE__1">
+  <!-- THIS IS THE MAIN OUTER CONTAINER OF THE SCHEDULE-ONLIE MODULE -->
+
+  <div class="main_container">
+    <!-- A NESTED CONTAINER THAT WILL CONTAIN THE ACTUAL ELEMENTS -->
+    <nav class="page_ind_container">
+      <!-- THE INDICATOR CONTAINER AT THE TOP INSIDE THE MODULE. -->
+      <!-- this component will indicate the current state of the Schedule-Online form. Some icons of 'checkmark' sign,
+          some text elements with the different pages names. -->
+
+      <i class="i ind_icon current" name="checkmark"></i>
+      <span class="ind_line"></span>
+      <div class="indicator indicator__1 current"><span content="service" content-changed="1"></span></div>
+
+      <span class="ind_line"></span>
+      <i class="i ind_icon" name="checkmark"></i>
+      <span class="ind_line hide_on_mobile"></span>
+      <div class="indicator indicator__2"><span content="location" content-changed="2"></span></div>
+
+      <span class="ind_line"></span>
+      <i class="i ind_icon" name="checkmark"></i>
+      <span class="ind_line hide_on_mobile"></span>
+      <div class="indicator indicator__3"><span content="date & time" content-changed="3"></span></div>
+
+      <span class="ind_line"></span>
+      <i class="i ind_icon" name="checkmark"></i>
+      <span class="ind_line hide_on_mobile"></span>
+      <div class="indicator indicator__3"><span content="customer details" content-changed="4"></span></div>
+
+      <span class="ind_line"></span>
+      <i class="i ind_icon" name="checkmark"></i>
+      <span class="ind_line hide_on_mobile"></span>
+      <div class="indicator indicator__3"><span content="card details" content-changed="5"></span></div>
+
+      <span class="ind_line"></span>
+      <i class="i ind_icon" name="checkmark"></i>
+      <span class="ind_line hide_on_mobile"></span>
+      <div class="indicator indicator__3"><span content="confirm" content-changed="6"></span></div>
+
+      <span class="ind_line"></span>
+      <i class="i ind_icon" name="checkmark"></i>
+    </nav>
+
+    <div class="main_page_container">
+      <!-- THIS IS THE PARENT CONTAINER OF ALL THE PAGES OF THIS MODULE -->
+      <!-- this container has 7 different pages as <div> element with a common class 'pages'. If a page contains
+          the class 'current' that page will be visible and the others will be hidden -->
+
+      <div class="service_page pages current">
+        <!-- THE SELECT SERVICE PAGE -->
+
+        <!-- the main heading of the select service page -->
+        <h1 class="page_heading"><span>select one you want</span></h1>
+
+        <div class="select_level_container">
+          <!-- This container has three different buttons and a button indicator to indicate the selected button
+              once a button is selected, the indicator will slide under the background of that button. These buttons will
+              be used to display a single level at a time. There are three different levels of services categorised in
+              3 different containers -->
+
+          <button class="btn__level top selected"><span>top</span></button>
+          <button class="btn__level middle"><span>middle</span></button>
+          <button class="btn__level basic"><span>basic</span></button>
+          <span class="selected_button_indicator"></span>
+        </div>
+
+        <div class="section_service_container">
+          <!-- This section has three containers with a common class 'service_category_container'. Each represents
+              a category or level like 'TOP' 'MIDDLE' & 'BASIC'. First each page is divided into two main parts. One
+              has the name of the level. And the other part has two buttons to scroll the service cards left and right.
+              then it has two nested containers, and the last one contains the actual service cards -->
+
+          <div class="service_category_container top_category_container">
+            <!-- THE TOP CATEGORY CONTAINER -->
+
+            <!-- this is the lebel where the name of the level is mentioned -->
+            <span class="label"><span>top</span></span>
+
+            <div class="service_container left">
+              <!-- if this container contains the class 'left' means the service cards is already scrolled to the
+                  left, so the button to scroll right will be visible. And same for the class 'right' -->
+
+              <span class="scrl__left btn__scr"><i class="i" name="arrow_left"></i></span>
+              <span class="scrl__right btn__scr"><i class="i" name="arrow_right"></i></span>
+
+              <div class="service_container__1">
+                <div class="service_container__2" id="TOP_SERVICE">
+                  <!-- here the actual service cards will be placed. By default some dummy elements will be placed
+                      here to create a loadign animation. The animation will be removed by the JavaScript and the actual
+                      service card element will be placed here -->
+
+                  <div class="animate_element"></div>
+                  <div class="animate_element"></div>
+                  <div class="animate_element"></div>
+                  <div class="animate_element"></div>
+                  <div class="animate_element"></div>
+                  <div class="animate_element"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="service_category_container middle_category_container">
+            <!-- THE MIDDLE CATEGORY CONTAINER -->
+
+            <!-- this is the lebel where the name of the level is mentioned -->
+            <span class="label"><span>middle</span></span>
+
+            <div class="service_container left">
+              <!-- if this container contains the class 'left' means the service cards is already scrolled to the
+                  left, so the button to scroll right will be visible. And same for the class 'right' -->
+
+              <span class="scrl__left btn__scr"><i class="i" name="arrow_left"></i></span>
+              <span class="scrl__right btn__scr"><i class="i" name="arrow_right"></i></span>
+
+              <div class="service_container__1">
+                <div class="service_container__2" id="MIDDLE_SERVICE">
+                  <!-- here the actual service cards will be placed. By default some dummy elements will be placed
+                      here to create a loadign animation. The animation will be removed by the JavaScript and the actual
+                      service card element will be placed here -->
+
+                  <div class="animate_element"></div>
+                  <div class="animate_element"></div>
+                  <div class="animate_element"></div>
+                  <div class="animate_element"></div>
+                  <div class="animate_element"></div>
+                  <div class="animate_element"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="service_category_container basic_category_container">
+            <!-- THE BASIC SERVICE COTAINER -->
+
+            <!-- this is the lebel where the name of the level is mentioned -->
+            <span class="label"><span>basic</span></span>
+
+            <div class="service_container left">
+              <!-- if this container contains the class 'left' means the service cards is already scrolled to the
+                  left, so the button to scroll right will be visible. And same for the class 'right' -->
+
+              <span class="scrl__left btn__scr"><i class="i" name="arrow_left"></i></span>
+              <span class="scrl__right btn__scr"><i class="i" name="arrow_right"></i></span>
+
+              <div class="service_container__1">
+                <div class="service_container__2" id="BASIC_SERVICE">
+                  <!-- here the actual service cards will be placed. By default some dummy elements will be placed
+                      here to create a loadign animation. The animation will be removed by the JavaScript and the actual
+                      service card element will be placed here -->
+
+                  <div class="animate_element"></div>
+                  <div class="animate_element"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="location_page pages">
+        <!-- THE ENTER ADDRESS PAGE -->
+
+        <!-- the main heading of the enter address page -->
+        <h1 class="page_heading"><span>enter the address where you want us to come</span></h1>
+
+        <div class="section_location_container">
+          <!-- This section has an input element where the user will start typing their address. The google map API
+              will display some suggestions into the location list container. The has to click one of the suggestion
+              and that text will be selected as the users address -->
+
+          <div class="selected_items_preview_container">
+            <!-- This container holds the preview of their previous input. In this case, it is the service name 
+                and the serviceing time. The content of this section will be added by the JavaScript -->
+          </div>
+
+          <!-- This is the common structure of each input elements of this entire Schedule-Online module -->
+          <div class="address_box input_box">
+            <input class="input_field" type="text" name="address" id="address" placeholder="Ex- 2021 K Street Northwest, Washington, DC, USA" />
+            <label for="address"><span>address</span></label>
+          </div>
+
+          <div class="location_list_container">
+            <ul class="location_list">
+              <!-- Here, the location list will be placed by the JavaScript gettin form the google map API based on
+                the users input into the input field -->
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="time_slot_page pages">
+        <!-- THE SELECT TIME SLOT PAGE -->
+
+        <!-- The main heading of the select time slot page -->
+        <h1 class="page_heading"><span>choose your appointment time</span></h1>
+
+        <div class="section_time_slot_container">
+          <div class="date_service_container">
+            <div class="selected_items_preview_container">
+              <!-- This container holds the preview of their previous input. In this case, it is the service name 
+                  with the serviceing time and the entered address. The content of this section will be added by the
+                  JavaScript -->
+            </div>
+
+            <!-- This is the date input element. -->
+            <div class="date_box"><input type="date" name="service_date" id="service_date" /></div>
+          </div>
+
+          <div class="timeslot_container">
+            <!-- This is the main conteiner of the time slot page. It has a container to display the time slot elements.
+                And a button to display more time slots -->
+
+            <ul class="slot_list">
+              <!-- This container will contain the time slot elements, which will be added by JavaScript. By default it
+                  will contain a loading animation element. -->
+
+              <div class="animate_container">
+                <div class="label animate_element"></div>
+                <li class="animate_element"></li>
+                <li class="animate_element"></li>
+                <li class="animate_element"></li>
+                <li class="animate_element"></li>
+                <li class="animate_element last_slot_of_date"></li>
+
+                <div class="label animate_element"></div>
+                <li class="animate_element"></li>
+                <li class="animate_element"></li>
+                <li class="animate_element"></li>
+                <li class="animate_element"></li>
+                <li class="animate_element"></li>
+              </div>
+            </ul>
+
+            <!-- This button is to generate new time slots -->
+            <button type="button" class="btn_see_more"><span>see more slots</span></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="customer_details_page pages">
+        <!-- THE CUSTOMER DETAILS PAGE -->
+
+        <!-- The main heading of customer details page -->
+        <h1 class="page_heading"><span>let us know about you</span></h1>
+
+        <div class="section_customer_details_container">
+          <!-- THE MAIN CONTAINER OF THE CUSTOMER DETAILS PAGE -->
+          <!-- This contaner has 5 different input elements. first name, last name, phone number, email ID & notes.
+              the structure of each input element is the default structure of an input element -->
+
+          <div class="name_container">
+            <div class="first_name_box input_box">
+              <input class="input_field" type="text" name="first_name" id="first_name" placeholder="John"  />
+              <label for="first_name"><span>first name</span></label>
+            </div>
+            <div class="lase_name_box input_box">
+              <input class="input_field" type="text" name="last_name" id="last_name" placeholder="Smith"  />
+              <label for="last_name"><span>last name</span></label>
+            </div>
+          </div>
+
+          <div class="contact_container">
+            <div class="phone_num_box input_box">
+              <input class="input_field" type="text" name="phone_num" id="phone_num" placeholder="+1 (000) 000 0000"  />
+              <label for="phone_num"><span>phone number</span></label>
+            </div>
+            <div class="email_box input_box">
+              <input class="input_field" type="email" name="email" id="email" placeholder="xyz@example.ab"  />
+              <label for="email"><span>email</span></label>
+            </div>
+          </div>
+
+          <div class="customer_notes_box input_box">
+            <textarea class="input_field" name="customer_notes" id="customer_notes" placeholder="extra details that you want us to know (maximum 500 letter)"></textarea>
+            <label for="customer_notes"><span>notes (optional)</span></label>
+          </div>
+        </div>
+      </div>
+
+      <div class="card_details_page pages">
+        <!-- THE CARD DETAILS PAGE -->
+
+        <!-- The main heading of the card details page -->
+        <h1 class="page_heading"><span>Enter your credit card details</span></h1>
+
+        <div class="section_card_details_container">
+          <!-- THE MAIN CONTAINER OF THE CARD DETAILS PAGE -->
+          <!-- this container has 5 different input elements. card number, expiration date, CVV, billing zip code. -->
+
+          <div class="card_details_container">
+            <div class="card_number_box input_box">
+              <input class="input_field" type="text" name="card_number" id="card_number" placeholder="xxxx-xxxx-xxxx-xxxx"  />
+              <label for="card_number"><span>card number</span></label>
+            </div>
+
+            <div class="expiration_date_box input_box">
+              <input class="input_field" type="text" name="expiration_date" id="expiration_date" placeholder="MM / YY"  />
+              <label for="expiration_date"><span>expiration</span></label>
+            </div>
+
+            <div class="cvv_box input_box">
+              <input class="input_field" type="text" name="cvv" id="cvv" placeholder="123"  />
+              <label for="cvv"><span>CVV</span></label>
+            </div>
+
+            <div class="billing_zipcode_box input_box">
+              <input class="input_field" type="text" name="billing_zipcode" id="billing_zipcode" placeholder="Ex- 20001"  />
+              <label for="billing_zipcode"><span>card billing zipcode</span></label>
+            </div>
+
+            <div class="conditions_box">
+              <!-- This contains some condition related to the input field information -->
+
+              <h3 class="condition">The card will not be charged until after service is complete.</h3>
+              <h3 class="condition">We never disclose any information of customer.</h3>
+            </div>
+          </div>
+
+          <div class="card_preview_container">
+            <h2 class="card_preview_tagline"><span>we proudly accept</span></h2>
+            <div class="card_preview_box">
+              <span class="card_img">
+                <img src="./schedule-online/assets/mastercard.svg" alt="mastercard logo" />
+              </span>
+
+              <span class="card_img"><img src="./schedule-online/assets/visa.svg" alt="visa logo" /></span>
+
+              <span class="card_img">
+                <img src="./schedule-online/assets/american express.svg" alt="american express logo" />
+              </span>
+
+              <span class="card_img">
+                <img src="./schedule-online/assets/discover.svg" alt="discover logo" />
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="confirmation_page pages">
+        <!-- THE CONFIRMATION PAGE -->
+        <!-- this page will basically show a preview of all the user's inputs. This helps the user to varify the
+            informations they putted into the input fields -->
+
+        <!-- The main heading of the confirmation page -->
+        <h1 class="page_heading"><span>does this look right ?</span></h1>
+
+        <div class="section_confirmation_container">
+          <!-- THE MAIN CONTAINER OF THE CONFIRMATION PAGE -->
+          <!-- the layout of this page more looks a table like structure. here the elements with the class 'labels'
+              are the labels of the information. The empty elements will be filled up by JavaScript -->
+
+          <h3 class="service_name_heading labels"><span>service name:</span></h3>
+          <span class="service_name_box"><span class="service_name_preview"></span></span>
+
+          <h3 class="appointment_time_heading labels"><span>service time:</span></h3>
+          <span class="appointment_time_preview">
+            <br />
+            <span class="attention">*Please allow the technician a two hours arrival window</span>
+          </span>
+
+          <h3 class="service_location_heading labels"><span>service location:</span></h3>
+          <span class="service_location_preview"></span>
+
+          <h3 class="customer_details_heading labels"><span>customer details:</span></h3>
+          <span class="customer_details_box">
+            <span class="customer_name_preview"></span>
+            <span class="customer_phone_preview"></span>
+            <span class="customer_email_preview"></span>
+          </span>
+
+          <h3 class="billing_details_heading labels"><span>billing details:</span></h3>
+          <span class="billing_details_preview">
+            <br />
+            <span class="attention">**The card will not be charged until after service is complete</span>
+          </span>
+
+          <h3 class="total_amount_heading labels"><span>total amount:</span></h3>
+          <span class="total_amount_preview"></span>
+
+          <h3 class="service_note_heading labels"><span>serivice note:</span></h3>
+          <span class="service_note_preview"></span>
+        </div>
+      </div>
+
+      <div class="complete_page pages">
+        <!-- THE COMPLETE PAGE -->
+
+        <!-- The main heading of the complete page -->
+        <h1 class="page_heading"><span>appointment confirmed !!!</span></h1>
+
+        <div class="section_complete_page">
+          <!-- Main container of the complete page -->
+          <!-- A greeting text customized for the user will be displayed by the JavaScript -->
+
+          <div class="complete_message_body">
+            <!-- Here, the body of the message will be added by The javascript. -->
+            <h4 class="terms_heading">
+              <span>If you would like to make changes to your appointment or cancel it, please contact us!</span>
+            </h4>
+            <div class="contact_info_box">
+              <h5 class="contact_heading">
+                <i class="i" name="email"></i>
+                email:
+              </h5>
+              <a class="business_email" href="#">
+                <p class="email"></p>
+              </a>
+
+              <h5 class="contact_heading">
+                <i class="i" name="phone"></i>
+                phone:
+              </h5>
+              <a class="business_phone" href="#">
+                <p class="phone"></p>
+              </a>
+            </div>
+
+            <div class="note_box">
+              <h5 class="note_heading">note:</h5>
+              <p class="note">Your credit card will not be charged until after service is complete.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="navigationBtn_container">
+      <button type="button" class="btn_previous"><span>previous</span></button>
+      <button type="button" class="btn_next"><span>next</span></button>
+      <button type="button" class="btn_schedule"><span>schedule</span></button>
+      <button type="button" class="btn_close"><span>close</span></button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,63 @@
+<section id="__SCHEDULE_ONLINE_SMALL" class="__SCHEDULE_ONLINE_SMALL" color_scheme="SCHEDULE_SMALL__1">
+  <div class="select_service_section hide_list">
+    <div class="input_box">
+      <input type="text" name="service_name_input" id="service_name_input" placeholder="Choose a service please" />
+
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+      </svg>
+    </div>
+
+    <div class="service_list_container">
+      <div class="select_level_container">
+        <!-- This container has three different buttons and a button indicator to indicate the selected button
+            once a button is selected, the indicator will slide under the background of that button. These buttons will
+            be used to display a single level at a time. There are three different levels of services categorised in
+            3 different containers -->
+
+        <button class="btn__level top selected"><span>top</span></button>
+        <button class="btn__level middle"><span>middle</span></button>
+        <button class="btn__level basic"><span>basic</span></button>
+        <span class="selected_button_indicator"></span>
+      </div>
+
+      <div class="service_list">
+        <div class="service_container" id="TOP_SERVICE">
+          <!-- here the actual service cards will be placed. By default some dummy elements will be placed
+              here to create a loadign animation. The animation will be removed by the JavaScript and the actual
+              service card element will be placed here -->
+          <div class="animate_element"></div>
+          <div class="animate_element"></div>
+          <div class="animate_element"></div>
+          <div class="animate_element"></div>
+          <div class="animate_element"></div>
+          <div class="animate_element"></div>
+        </div>
+
+        <div class="service_container" id="MIDDLE_SERVICE">
+          <!-- here the actual service cards will be placed. By default some dummy elements will be placed
+              here to create a loadign animation. The animation will be removed by the JavaScript and the actual
+              service card element will be placed here -->
+          <div class="animate_element"></div>
+          <div class="animate_element"></div>
+          <div class="animate_element"></div>
+          <div class="animate_element"></div>
+          <div class="animate_element"></div>
+          <div class="animate_element"></div>
+        </div>
+
+        <div class="service_container" id="BASIC_SERVICE">
+          <!-- here the actual service cards will be placed. By default some dummy elements will be placed
+              here to create a loadign animation. The animation will be removed by the JavaScript and the actual
+              service card element will be placed here -->
+          <div class="animate_element"></div>
+          <div class="animate_element"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a href="set-appointment.php" class="button_schedule_online_small">
+    <span>schedule now</span>
+  </a>
+</section>

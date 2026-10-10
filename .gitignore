@@ -1,1 +1,8 @@
-/desktop.ini
+.DS_Store
+Thumbs.db
+node_modules/
+.vscode/
+.idea/
+*.log
+# Keep real keys and endpoints out of the repo
+schedule-online/scripts/config.local.js

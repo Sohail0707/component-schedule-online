@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{brand} | Mobile car detailing</title>
+  <meta name="description" content="Demo of the Schedule Online booking module: one codebase, many branded websites." />
+  <link rel="stylesheet" href="schedule-online/css/schedule-small.css" />
+  <link rel="stylesheet" href="demo/demo.css" />
+  <script type="module" src="demo/demo.js"></script>
+</head>
+<body>
+  <div class="demo-bar">
+    <p>Demo: the same booking module, configured for three different businesses.</p>
+    <div class="switcher" role="group" aria-label="Switch demo brand">
+      <button type="button" data-switch-brand="shine">Shine (blue)</button>
+      <button type="button" data-switch-brand="evergreen">Evergreen (green)</button>
+      <button type="button" data-switch-brand="redline">Redline (red)</button>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <a class="logo" href="index.html" data-keep-brand data-brand-name>Shine Mobile Detailing</a>
+    <nav><a href="book.html" data-keep-brand>Book online</a></nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <p class="eyebrow">Mobile car detailing</p>
+        <h1 data-brand-tagline>Showroom finish, in your driveway.</h1>
+        <p class="lede">Pick a service to see prices and times, then continue to book a slot at your address.</p>
+        <div class="picker-slot" data-demo-mount="small"></div>
+      </div>
+    </section>
+
+    <section class="explain" aria-label="How the demo works">
+      <div>
+        <h2>One module, many sites</h2>
+        <p>Each business sets its name, contact details and colour theme in one config file. The markup and scripts stay the same.</p>
+      </div>
+      <div>
+        <h2>Two entry points</h2>
+        <p>A compact service picker for home pages, and the full seven-step booking form. The picker hands its choice over to the form.</p>
+      </div>
+      <div>
+        <h2>Runs offline here</h2>
+        <p>This demo uses mock data for services, addresses and time slots. No booking is sent and no card is charged.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">Demo build of the Schedule Online booking module. All businesses shown are fictional.</footer>
+</body>
+</html>

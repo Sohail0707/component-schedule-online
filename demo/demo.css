@@ -1,0 +1,148 @@
+/* Styles for the demo pages only. The booking module brings its own CSS. */
+
+:root {
+  --ink: #12161c;
+  --muted: #5b6470;
+  --line: #e3e6ea;
+  --paper: #ffffff;
+  --wash: #f4f6f8;
+  --accent: #155ba1;
+}
+[data-brand="evergreen"] { --accent: #047857; }
+[data-brand="redline"] { --accent: #9f1239; }
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.5;
+}
+
+a { color: inherit; }
+
+/* Demo bar */
+.demo-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 16px;
+  padding: 10px 16px;
+  background: var(--ink);
+  color: #fff;
+  font-size: 13px;
+}
+.demo-bar p { margin: 0; opacity: 0.85; }
+.demo-bar .switcher { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.demo-bar button {
+  font: inherit;
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+.demo-bar button[aria-pressed="true"] { background: #fff; color: var(--ink); border-color: #fff; }
+.demo-bar button:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+
+/* Site header */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 20px 16px;
+}
+.logo { font-weight: 700; font-size: 18px; text-decoration: none; letter-spacing: -0.01em; }
+.logo::before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 8px;
+  border-radius: 3px;
+  background: var(--accent);
+  vertical-align: 0;
+}
+.site-header nav a { font-size: 14px; color: var(--muted); text-decoration: none; }
+.site-header nav a:hover { color: var(--ink); }
+
+/* Home hero */
+.hero {
+  background: var(--wash);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.hero-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 64px 16px 72px;
+}
+.eyebrow {
+  margin: 0 0 12px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.hero h1 {
+  margin: 0 0 12px;
+  font-size: clamp(32px, 5vw, 52px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  max-width: 14ch;
+}
+.hero .lede { margin: 0 0 32px; font-size: 18px; color: var(--muted); max-width: 46ch; }
+.picker-slot { max-width: 640px; }
+
+/* Explainer */
+.explain {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 56px 16px;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+.explain h2 { margin: 0 0 6px; font-size: 16px; }
+.explain p { margin: 0; color: var(--muted); font-size: 15px; }
+
+/* Booking page */
+.booking-intro { max-width: 1120px; margin: 0 auto; padding: 8px 16px 24px; }
+.booking-intro h1 { margin: 0 0 6px; font-size: clamp(26px, 4vw, 36px); letter-spacing: -0.01em; }
+.booking-intro p { margin: 0; color: var(--muted); }
+.test-card {
+  max-width: 1120px;
+  margin: 0 auto 24px;
+  padding: 0 16px;
+  font-size: 14px;
+  color: var(--muted);
+}
+.test-card code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 13px;
+  background: var(--wash);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 1px 5px;
+  color: var(--ink);
+}
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  margin-top: 48px;
+  padding: 24px 16px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.demo-error { padding: 16px; border: 1px solid var(--line); border-radius: 8px; color: var(--muted); }

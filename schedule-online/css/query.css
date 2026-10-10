@@ -1,0 +1,507 @@
+/* Editing different elements of different pages into each media query is placed
+following this order. General Elements → Page 1 → Page 2 → Page 3 → Page 4 → Page 5
+→ Page 6 → Page 7.
+And also each page will follow from the parent element to the child elements */
+
+/* IF THE VIEWPORT WIDTH IS LESS THAN OR EQUAL TO 1008px */
+@media (max-width: 1008px) {
+  /* general elements */
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .main_container {
+    width: 100%;
+  }
+}
+
+/* IF THE VIEWPORT WIDTH IS LESS THAN OR EQUAL TO 916px */
+@media (max-width: 916px) {
+  /*general elements*/
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .main_container {
+    padding: 4.8em;
+  }
+
+  /* #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .main_page_container {
+    padding: 4.8em 0;
+  } */
+
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .navigationBtn_container {
+    margin-top: 4.8em;
+  }
+
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .page_ind_container {
+    margin-bottom: 4.8em;
+  }
+
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .ind_icon:not(:first-child):not(:last-child) {
+    display: none;
+  }
+
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .ind_line.hide_on_mobile {
+    display: none;
+  }
+
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .visited.indicator {
+    background: var(--SchedulePrimary);
+    color: var(--ScheduleWhite);
+  }
+
+  /* customer details page */
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .name_container,
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .contact_container {
+    gap: 2em;
+  }
+}
+
+/* IF THE VIEWPORT WIDTH IS LESS THAN OR EQUAL TO 840px */
+@media (max-width: 840px) {
+  /* time slot page */
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .slot {
+    gap: 4.8em;
+  }
+
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .start_end_time_box {
+    width: 20em;
+  }
+}
+
+/* IF THE VIEWPORT WIDTH IS LESS THAN OR EQUAL TO 795px */
+@media (max-width: 795px) {
+  /* confirmation page */
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .section_confirmation_container {
+    row-gap: 2.4em;
+    column-gap: 3.2em;
+  }
+
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .section_confirmation_container .labels span {
+    font-size: 1.6em;
+  }
+}
+
+/* IF THE VIEWPORT WIDTH IS LESS THAN OR EQUAL TO 770px */
+@media (max-width: 770px) {
+  /* time slot page */
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .section_time_slot_container {
+    gap: 2.4em;
+  }
+
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .date_service_container {
+    position: static;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.6em;
+    padding: 0;
+  }
+
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .date_service_container::before {
+    display: none;
+  }
+
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .slot .day_date_box {
+    display: none;
+  }
+
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .slot_label {
+    display: flex;
+  }
+}
+
+/* IF THE VIEWPORT WIDTH IS LESS THAN OR EQUAL TO 720px */
+@media (max-width: 720px) {
+  /* General elements */
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .main_container {
+    padding: 3.2em;
+  }
+
+  /* service page */
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .service_category_container:not(:last-child) {
+    margin-bottom: -3em;
+  }
+}
+
+/* IF THE VIEWPORT WIDTH IS LESS THAN OR EQUAL TO 695px */
+@media (max-width: 695px) {
+  /* general elements */
+  /* #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .main_page_container {
+    padding: 2.4em 0 4.8em;
+  } */
+
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .page_ind_container {
+    margin-bottom: 2.4em;
+  }
+
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .navigationBtn_container {
+    margin-top: 4.8em;
+  }
+
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .page_heading span {
+    font-size: 2.4em;
+    line-height: 1.2;
+    font-weight: 700;
+  }
+
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2em;
+    width: 2em;
+    padding: 0;
+    border-radius: 50%;
+  }
+
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .indicator span::before {
+    content: attr(content-changed);
+  }
+
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .current.indicator {
+    display: flex;
+    height: auto;
+    width: auto;
+    border-radius: 6em;
+    padding: 0.3em 0.8em;
+    color: var(--SchedulePrimary);
+    background: transparent;
+  }
+
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .current.indicator span::before {
+    content: attr(content);
+    height: auto;
+    width: auto;
+  }
+
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .ind_line {
+    height: 0.17em;
+  }
+
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .section_service_container {
+    font-size: 9px;
+  }
+
+  /* customer details page */
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .section_customer_details_container {
+    padding-top: 1.2em;
+  }
+
+  /* card details page */
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .section_card_details_container {
+    padding-top: 1.2em;
+  }
+
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .card_details_container {
+    column-gap: 1.6em;
+  }
+
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .card_preview_container {
+    margin-top: 3.2em;
+  }
+}
+
+/* IF THE VIEWPORT WIDTH IS LESS THAN OR EQUAL TO 622px */
+@media (max-width: 622px) {
+  /* time slot page */
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .btn_select_slot {
+    line-height: 0.7;
+    padding: 1.6em 2em 1.4em;
+  }
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .btn_select_slot span {
+    font-size: 1.4em;
+  }
+
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .slot_label {
+    padding: 1.4em 2em;
+  }
+
+  /* confirmation page */
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .service_name_preview span,
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .appointment_time_preview,
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .service_location_preview,
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .customer_name_preview,
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .customer_phone_preview,
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .customer_email_preview,
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .billing_details_preview {
+    font-size: 1.6em;
+  }
+
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .customer_details_box {
+    gap: 0.8em;
+  }
+}
+
+/* IF THE VIEWPORT WIDTH IS LESS THAN OR EQUAL TO 570px */
+@media (max-width: 570px) {
+  /* general elements */
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .main_container {
+    padding: 3.6em;
+  }
+
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .selected_items_preview_container {
+    overflow: hidden;
+    column-gap: 0.8em;
+  }
+
+  /* select service page */
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .select_level_container {
+    display: grid;
+  }
+
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .section_service_container {
+    margin: 0;
+    gap: 2.4em;
+  }
+
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .service_category_container:not(:last-child) {
+    margin-bottom: 0;
+  }
+
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .middle_category_container,
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .basic_category_container {
+    display: none;
+  }
+
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .service_page .label {
+    display: none;
+  }
+
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .service_container {
+    overflow-x: visible;
+    margin: 0 auto;
+    grid-column: 1/3;
+  }
+
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .btn__scr {
+    display: none !important;
+  }
+
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .service_container__1 {
+    overflow-x: visible;
+  }
+
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .service_container__2 {
+    padding: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+  }
+
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .service_card {
+    padding: 1.8em;
+    width: auto;
+    min-width: fit-content;
+  }
+
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .section_service_container .animate_element {
+    width: 100%;
+  }
+
+  /* enter address page */
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .location_list_container li {
+    padding: 1em;
+  }
+
+  /* customer details page */
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .name_container,
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .contact_container {
+    flex-direction: column;
+    gap: 3.2em;
+  }
+
+  /* confirmation page */
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .section_confirmation_container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.6em;
+  }
+
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .section_confirmation_container .labels:not(:first-child) {
+    margin-top: 3em;
+  }
+}
+
+/* IF THE VIEWPORT WIDTH IS LESS THAN OR EQUAL TO 500px */
+@media (max-width: 500px) {
+  /* general elements */
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .main_container {
+    padding: 3.2em 2.4em;
+  }
+
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .navigationBtn_container {
+    gap: 2em;
+  }
+
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .input_box .i {
+    display: none;
+  }
+
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .input_box {
+    padding: 0.8em;
+  }
+
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .selected_items_preview_container {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    row-gap: 0;
+    align-items: center;
+  }
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .selected_items_preview_container .label {
+    display: none;
+  }
+
+  /* time slot page */
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .date_service_container .date_box {
+    padding: 0.8em;
+  }
+
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .slot {
+    gap: 0;
+    padding: 1.2em;
+  }
+
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .slot_label {
+    padding: 1.4em 1.2em;
+  }
+
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .start_end_time_box {
+    width: 18em;
+  }
+}
+
+/* IF THE VIEWPORT WIDTH IS LESS THAN OR EQUAL TO 470px */
+@media (max-width: 470px) {
+  /* general elements */
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .main_container {
+    padding: 3.2em 1.6em;
+  }
+
+  /* confirmation page schedule animation element */
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .animation_background .animation_container {
+    gap: 1.2em;
+  }
+
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .animation_background .animation_container .animate_figure {
+    height: 3.6em;
+    width: 3.6em;
+  }
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .animation_background .animation_container .process_text {
+    font-size: 2.4em;
+    font-weight: 500;
+  }
+
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .animation_background .animation_container #process_indication {
+    width: 4.8em;
+    height: 4.8em;
+  }
+}
+
+/* IF THE VIEWPORT WIDTH IS LESS THAN OR EQUAL TO 455px */
+@media (max-width: 455px) {
+  /* general elements */
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .main_container {
+    padding: 3.2em;
+  }
+
+  /* select service page */
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .section_service_container {
+    font-size: inherit;
+  }
+
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .service_container__2 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2em;
+  }
+
+  /* card details page */
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .billing_zipcode_box {
+    max-width: 100%;
+  }
+
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .card_preview_box {
+    margin-top: 1.2em;
+  }
+}
+
+/* IF THE VIEWPORT WIDTH IS LESS THAN OR EQUAL TO 430px */
+@media (max-width: 430px) {
+  /* select service page */
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .service_card {
+    padding: 1.8em;
+    width: 100%;
+  }
+
+  /* time slot page */
+  /* #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .date_service_container .date_box {
+    width: 14em;
+  } */
+
+  /* the schedule animation element */
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .animation_background .animation_container {
+    flex-direction: column;
+    gap: 1.6em;
+  }
+
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .animation_background .animation_container .process_text {
+    font-size: 1.6em;
+  }
+}
+
+/* IF THE VIEWPORT WIDTH IS LESS THAN OR EQUAL TO 422px */
+@media (max-width: 422px) {
+  /* general elements */
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .page_ind_container > .ind_line:first-of-type {
+    display: none;
+  }
+
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .page_ind_container > .ind_line:last-of-type {
+    display: none;
+  }
+
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .ind_icon {
+    display: none;
+  }
+
+  /* select service page */
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .btn_select_slot {
+    line-height: 0.7;
+    padding: 1.4em 1.4em 1.2em;
+  }
+
+  /* enter address page */
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .location__preview {
+    margin-bottom: 1em;
+  }
+
+  /* time slot page */
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .date_service_container {
+    gap: 2.4em;
+  }
+}
+
+/* IF THE VIEWPORT WIDTH IS LESS THAN OR EQUAL TO 400px */
+@media (max-width: 400px) {
+  /* general elements */
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .main_container {
+    padding: 2.4em 1.2em;
+  }
+}
+
+/* SOME GENERAL STYLES IF THE DEVICE IS A TOUCH SCREEN DEVICE LIKE TABLET OR
+SMARTPHONE */
+@media (hover: none), (pointer: coarse) {
+  /* general elements */
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .main_container {
+    min-height: 100%;
+  }
+
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .btn_previous:hover {
+    background: transparent;
+    border: 0.2em solid var(--SchedulePrimary);
+    color: var(--SchedulePrimary);
+  }
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .btn_next:hover {
+    background: var(--SchedulePrimary);
+    border: none;
+    color: var(--ScheduleWhite);
+  }
+
+  #__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .navigationBtn_container .btn_schedule:hover {
+    background: var(--ScheduleRight);
+  }
+}

@@ -1,0 +1,842 @@
+/* This file contains styling code of some general / commonly used elements all over
+ the pages. each selector has a parent selector '#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE' */
+
+/* Importing the font 'Inter' */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE * {
+  /* This selector denotes every elements of the entire schedule module */
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif !important;
+  text-align: start;
+  text-shadow: none;
+  -webkit-font-smoothing: antialiased; /* Chrome, Safari */
+  -moz-osx-font-smoothing: grayscale; /* Firefox on Mac OS X */
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE {
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--ScheduleGray__4);
+}
+
+/* Default values of html tags */
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE a {
+  display: inline;
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE div {
+  display: block;
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE nav {
+  display: block;
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE h1 {
+  display: block;
+  font-size: 2em;
+  font-weight: bold;
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE h2 {
+  display: block;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE h3 {
+  display: block;
+  font-size: 1.17em;
+  font-weight: bold;
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE h4 {
+  display: block;
+  font-weight: bold;
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE h5 {
+  display: block;
+  font-size: 0.83em;
+  font-weight: bold;
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE img {
+  display: inline-block;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE li {
+  text-align: start;
+  text-indent: 0;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE {
+  /* This is the main outer container of the Schedule-Online module */
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased; /* Chrome, Safari */
+  -moz-osx-font-smoothing: grayscale; /* Firefox on Mac OS X */
+  width: 100%;
+  position: relative;
+  font-size: 10px;
+  /* background-color: dodgerblue; */
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .main_container {
+  /* This is a nested container that contains the main elements of the schedule_component */
+  display: flex;
+  flex-direction: column;
+  max-width: 112em;
+  padding: 6.4em;
+  overflow: hidden;
+  margin: 0 auto;
+  /* background-color: lawngreen; */
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .main_page_container {
+  /* This container is the parent container of the six different
+  pages */
+  display: flex;
+  width: 100%;
+  transition: all 0.5s ease-in-out;
+  /* background-color: crimson; */
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .pages {
+  /* This is the main outer container of each page */
+  /* height: fit-content; */
+  /* flex-shrink: 0; */
+  width: 100%;
+  /* opacity: 0;
+  height: 0; */
+  /* transition: all 0.5s ease-in-out; */
+  /* background-color: gold; */
+  display: none;
+}
+
+/* the page that has the class 'current', will be visible */
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .current.pages {
+  /* height: fit-content;
+  opacity: 1; */
+  display: block;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .page_heading {
+  /* Heading element of the each page of the Schedule-Online component. */
+  font-size: inherit;
+  margin-bottom: 3.2em !important;
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .page_heading span {
+  /* the separated the text of the heading element */
+  font-size: 3em;
+  font-weight: 600;
+  color: var(--ScheduleBlack);
+  line-height: 1;
+  text-transform: capitalize;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .i {
+  /* This class used to create an icon element. <i class="i" name="checkmark"></i>
+  javascript will automatically put the svg icon code into this tag */
+  height: min-content;
+  width: min-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .icon {
+  /* This class is added into each svg icons. By editing this class we can directly
+   edit the icon */
+  width: 2.4em;
+  height: 2.4em;
+  stroke-width: 0.15em;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .hidden {
+  /* This class is just for development perpose. If needed to hide any element */
+  display: none !important;
+}
+
+/* THE PAGE NAVIGATION INDICATOR AT THE TOP OF THE SCHEDULE_ELEMENT
+//////////////////////////////////////////////////////////////// */
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .page_ind_container {
+  /* This is the outer container of the page navigation indicator component */
+  width: max-content;
+  display: flex;
+  align-items: center;
+  margin: 0 auto 5.6em;
+  color: var(--SchedulePrimary);
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .ind_line {
+  /* The horisontal lines between icons or indicator */
+  width: 1.5em;
+  height: 0.15em;
+  background: var(--SchedulePrimary);
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .indicator {
+  /* This is the outer container of the indicator element */
+  display: inline-block;
+  position: relative;
+  padding: 0.3em 0.8em;
+  border-radius: 6em;
+  font-size: inherit;
+  background: transparent;
+  box-shadow: 0 0 0 0.15em var(--SchedulePrimary);
+  transition: all 0.3em;
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .indicator span {
+  /* This is the text element of the indicator */
+  font-size: 1em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .indicator span::before {
+  /* a sudo element that placed just before each text element of the indicator
+  this element will be visible by default with the text from the 'content' attribute
+  when the display will become smaller, it will cahnge it's content to 'content-changed'
+  attribute */
+  content: attr(
+    content
+  ); /* <span content="location" content-changed="2"></span> */
+  visibility: visible;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .ind_icon {
+  /* this is the icon element oj the indicator component.
+  <i class="i ind_icon" name="checkmark"></i> */
+  height: 1.8em;
+  width: 1.8em;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0.15em var(--SchedulePrimary);
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .ind_icon .icon {
+  /* this is the actual svg icon */
+  width: 1.2em;
+  height: 1.2em;
+  stroke-width: 0.3em;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .current.indicator {
+  /* The class 'current' will be added to the indicator that indicates the current
+  page */
+  background: var(--SchedulePrimary);
+  color: var(--ScheduleWhite);
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .visited.indicator {
+  /* The class 'visited' will be added to the indicator that indicated the pages that
+  is already visited */
+  /* background: var(--ScheduleWhite); */
+  color: var(--SchedulePrimary);
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .current.ind_icon {
+  /* If the icon has the class 'current', it will become solid in color */
+  background: var(--SchedulePrimary);
+  color: var(--ScheduleWhite);
+}
+
+/*/////////////////// INPUT FIELDS STYLE /////////////////////
+////////////////////////////////////////////////////////////*/
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .input_box {
+  /* This is the main outer container of each input field component */
+  position: relative;
+  padding: 0.8em 4.8em 0.8em 1.6em;
+  height: 6em;
+  width: 100%;
+  display: flex;
+  align-items: end;
+  background: var(--ScheduleBlack__1);
+  border: 0.2em solid transparent;
+  cursor: text;
+  transition: border 0.3s;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .input_box label {
+  /* The label of the input field */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: 500;
+  font-size: inherit;
+  text-transform: capitalize;
+  color: var(--ScheduleGray__4);
+  pointer-events: none;
+  transition: all 0.3s;
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .input_box label span {
+  /* Just a nested tag into the label to separatly style the label and the text in it */
+  font-size: 2em;
+  transition: all 0.3s;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .input_box .input_field {
+  /* This is the actual input field. This element contains the actual input data */
+  display: inline-block;
+  font-size: 1.6em;
+  width: 100%;
+  font-weight: 500;
+  color: var(--ScheduleGray__4) !important;
+  background: transparent !important;
+  outline: none;
+  border: none;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .input_box input.input_field {
+  overflow: auto;
+  white-space: nowrap;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE
+  .input_box
+  .input_field::placeholder {
+  font-weight: 400;
+  font-size: 1em;
+  color: transparent; /* Initially the placeholder will be invisible */
+  text-transform: none;
+  transition: color 0.3s;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE
+  .input_box
+  .input_field:focus
+  + label,
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE
+  .input_box
+  .input_field:not(:placeholder-shown)
+  + label {
+  /* This style will be added if the input field is on focus or contains data */
+  top: 0.8em;
+  transform: none;
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE
+  .input_box
+  .input_field:focus
+  + label
+  span,
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE
+  .input_box
+  .input_field:not(:placeholder-shown)
+  + label
+  span {
+  /* Just separately styling the text of the label if the input field is on focus or
+   contains data */
+  font-size: 1.4em;
+  color: var(--ScheduleGray__2);
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .input_box:focus-within {
+  /* If any input field comes on focus into the input box, this style will be applied
+   on the box */
+  border: 0.2em solid var(--ScheduleHighlight);
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE
+  .input_box
+  .input_field:focus::placeholder {
+  /* The placeholder will visible if focused on an input field */
+  color: var(--ScheduleGray__1);
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .input_box .icon {
+  /* Each input box will contain an icon to display the validation status
+  this will be placed by javascript for visualize the validation status */
+  height: 2.4em;
+  width: 2.4em;
+}
+
+/************** VALIDATION STYLE OF AN INPUT FIELD **************/
+/* If the input field is valid, a calss 'valid' will be added to the outer container
+ of the input element. if it is invalid, a class 'invalid' will be added to the outer
+ container of the input element. if needed to display any error message into the input
+ field, an html element will be added into the input field container with the class
+ 'error' */
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .input_box.valid {
+  /* outer container style of a valid input element */
+  background: var(--ScheduleRight__1);
+  border: 0.2em solid var(--ScheduleRightHighlight);
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE
+  .input_box.valid
+  [name="checkmark_circle_outline"] {
+  /* each valid input element will have the icon element with this attribute 
+  <i class="i" name="checkmark_circle_outline"></i> */
+  position: absolute;
+  top: 50%;
+  right: 1.6em;
+  transform: translateY(-50%);
+  color: var(--ScheduleRightHighlight);
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .input_box.invalid {
+  /* outer container style of an invalid input element */
+  background: var(--ScheduleWrong__1);
+  border: 0.2em solid var(--ScheduleWrong);
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE
+  .input_box.invalid
+  [name="cross_circle_outline"] {
+  /* each valid input element will have the icon element with this attribute 
+  <i class="i" name="cross_circle_outline"></i> */
+  position: absolute;
+  top: 50%;
+  right: 1.6em;
+  transform: translateY(-50%);
+  opacity: 1;
+  color: var(--ScheduleWrong);
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .input_box .error {
+  /* Outer container of the error message. this is absolutely positioned with the
+   input field outer container this will be displayed above the input field element */
+  position: absolute;
+  left: 0;
+  top: -2em;
+  font-weight: 500;
+  font-size: inherit;
+  width: max-content;
+  animation: shake 0.3s ease forwards; /* shaking animation when the error message is
+   been displayed */
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .input_box .error span {
+  /* Separate text element of the error message */
+  font-size: 1.2em;
+  line-height: 1;
+  color: var(--ScheduleWrong);
+}
+
+@keyframes shake {
+  /* This creates a shaking animation */
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(0.8em);
+  }
+  50% {
+    transform: translateX(-0.8em);
+  }
+  75% {
+    transform: translateX(0.8em);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* //////////////// NAVIGATION BUTTON STYLE ////////////////
+///////////////////////////////////////////////////////// */
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .navigationBtn_container {
+  /* The outer container of the navigation buttons */
+  display: flex;
+  width: fit-content;
+  gap: 3.6em;
+  margin-left: auto;
+  margin-top: 5.6em;
+  /* background-color: cyan; */
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE
+  .navigationBtn_container
+  button {
+  /* These are the actual button elements */
+  font-size: inherit;
+  padding: 1.2em 2.4em;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.8em;
+  transition: all 0.3s;
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE
+  .navigationBtn_container
+  button
+  span {
+  /* The separated text element of the button */
+  font-size: 1.6em;
+  font-weight: 500;
+  letter-spacing: 0.136em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE
+  .navigationBtn_container
+  .btn_previous {
+  background: transparent;
+  border: 0.2em solid var(--SchedulePrimary);
+  color: var(--SchedulePrimary);
+  display: none;
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE
+  .navigationBtn_container
+  .btn_next {
+  background: var(--SchedulePrimary);
+  border: none;
+  color: var(--ScheduleWhite);
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE
+  .navigationBtn_container
+  .btn_schedule {
+  background: var(--ScheduleRight);
+  border: none;
+  color: var(--ScheduleWhite);
+  display: none;
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE
+  .navigationBtn_container
+  .btn_close {
+  background: var(--ScheduleWrong);
+  border: none;
+  color: var(--ScheduleWhite);
+  display: none;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE
+  .navigationBtn_container
+  .btn_previous:hover {
+  border-color: var(--ScheduleHighlight);
+  color: var(--ScheduleWhite);
+  background: var(--ScheduleHighlight);
+  cursor: pointer;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE
+  .navigationBtn_container
+  .btn_next:hover {
+  border-color: var(--ScheduleHighlight);
+  color: var(--ScheduleWhite);
+  background: var(--ScheduleHighlight);
+  cursor: pointer;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE
+  .navigationBtn_container
+  .btn_schedule:hover {
+  background: var(--ScheduleRightHighlight);
+  cursor: pointer;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE
+  .navigationBtn_container
+  .btn_close:hover {
+  background: var(--ScheduleRightHighlight);
+  cursor: pointer;
+}
+
+/* //////////////// THE POPUP WARNING ELEMENT ////////////////
+/////////////////////////////////////////////////////////// */
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .popup_warning {
+  /* main outer container of a popup warning message */
+  position: fixed;
+  z-index: 7;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  display: flex;
+  align-items: center;
+  gap: 1.2em;
+  padding: 1.2em 1.6em;
+  width: max-content;
+  border-radius: 0.6em;
+  font-size: inherit;
+  background: var(--ScheduleWhite);
+  box-shadow: 0 0.6em 1.5em rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  pointer-events: none;
+  animation: popUp 0.2s ease-out forwards, slideDown 0.2s ease-in forwards 2.7s;
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .popup_warning span {
+  /* The separated text element of the warning message */
+  font-size: 1.2em;
+  line-height: 1;
+  color: var(--ScheduleWrong);
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .popup_warning .icon {
+  /* This the svg icon inside the warning element */
+  color: var(--ScheduleWrong);
+  height: 2em;
+  width: 2em;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .popup_warning::before {
+  /* This is the background of the warning element */
+  content: "";
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: -2;
+  background: var(--ScheduleWrong__1);
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .popup_warning::after {
+  /* This is the timer line that shrinks automatically */
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 0.3em;
+  width: 100%;
+  background-color: var(--ScheduleWrong);
+  animation: shrinkBar 2.5s linear forwards 0.15s;
+}
+
+@keyframes popUp {
+  from {
+    transform: translate(-50%, 100%);
+  }
+  to {
+    transform: translate(-50%, -5.6em);
+  }
+}
+
+@keyframes shrinkBar {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translate(-50%, -5.6em);
+  }
+  to {
+    transform: translate(-50%, 100%);
+  }
+}
+
+/* //////////////// THE SERVER ERROR MESSAGE ///////////////////
+///////////////////////////////////////////////////////////// */
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .pop_up_message_background {
+  content: "";
+  position: fixed;
+  backdrop-filter: blur(1em);
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.6em;
+  transition: all 0.3s;
+  animation: visible 0.3s ease;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE
+  .pop_up_message_background
+  .pop_up_message_body {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2em;
+  padding: 3.2em;
+  max-width: 60em;
+  height: fit-content;
+  background: rgba(255, 255, 255);
+  box-shadow: 0 1em 2em rgba(0, 0, 0, 0.2);
+  border-radius: 2em;
+}
+
+@keyframes visible {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE
+  .pop_up_message_background
+  .pop_up_message_body
+  p.warning_message {
+  font-size: 2em;
+  line-height: 1.5;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE
+  .pop_up_message_background
+  .pop_up_message_body
+  button.warning_button {
+  /* These are the actual button elements */
+  font-size: inherit;
+  padding: 1.2em 2.4em;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.8em;
+  background: var(--SchedulePrimary);
+  border: none;
+  color: var(--ScheduleWhite);
+  transition: all 0.3s;
+  margin-left: auto;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE
+  .pop_up_message_background
+  .pop_up_message_body
+  button.warning_button
+  span {
+  /* The separated text element of the button */
+  font-size: 1.6em;
+  font-weight: 500;
+  letter-spacing: 0.136em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE
+  .pop_up_message_background
+  .pop_up_message_body
+  button.warning_button:hover {
+  border-color: var(--ScheduleHighlight);
+  color: var(--ScheduleWhite);
+  background: var(--ScheduleHighlight);
+  cursor: pointer;
+}
+
+/* ///////// PREVIEW OF THE PREVIOUS INPUT OF THE USER /////////
+///////////////////////////////////////////////////////////// */
+/* This is the preview section of the previous input of the user. This section
+is been displayed at the top of the location and the time slot page  */
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE
+  .selected_items_preview_container {
+  /* this is the outer container <h2 class="label location_preview_label">address:</h2> */
+  display: grid;
+  grid-template-columns: auto 1fr; /* 'auto' is for the label of the data
+  that has to be displayed */
+  column-gap: 2em;
+  row-gap: 0.8em;
+  align-items: center;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE
+  .selected_items_preview_container
+  .label {
+  /* <h2 class="label location_preview_label">address:</h2> */
+  display: inline-block;
+  font-size: 1.6em;
+  text-transform: capitalize;
+  font-weight: 500;
+  color: var(--ScheduleGray__4);
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .location__preview {
+  /* <h2 class="label location_preview_label">address:</h2> */
+  font-size: inherit;
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .location__preview span {
+  font-size: 1.6em;
+  font-weight: 500;
+  color: var(--SchedulePrimary);
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .service_preview_box {
+  display: flex;
+  align-items: center;
+  gap: 0.8em;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE
+  .service_preview_box
+  .service__name_price_preview {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 1.6em;
+  color: var(--SchedulePrimary);
+}
+
+/* ////////////// LOADING ANIMATION COMMON STYLE ///////////////
+///////////////////////////////////////////////////////////// */
+/* This is a simple animation element '<div class="animate_element"></div>'
+the CSS will add a layer over the animate_element which will create a shining glass
+animation */
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .animate_element {
+  /* this is the basic style. We have style it separately based on where it will be
+   placed */
+  position: relative;
+  overflow: hidden;
+  pointer-events: none !important;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE .animate_element::after {
+  /* this is the sudo element which will be placed over the animate_element */
+  content: "";
+  position: absolute;
+  top: 50%;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.03),
+    rgba(0, 0, 0, 0.08),
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.08),
+    rgba(0, 0, 0, 0.03),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+@keyframes shine {
+  0% {
+    left: -100%;
+    transform: rotate(30deg) translate(-120%, -50%);
+  }
+
+  100% {
+    left: 100%;
+    transform: rotate(30deg) translate(20%, -50%);
+  }
+}
+
+/* animate element of the service page */
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE
+  .section_service_container
+  .animate_element {
+  width: 15em;
+  height: 21.8em;
+  background: var(--ScheduleBlack__1);
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE
+  .section_service_container
+  .animate_element::after {
+  width: 15em;
+  height: 50em;
+  animation: shine 2s infinite linear;
+}
+
+/* animate element of time slot page */
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE
+  .section_time_slot_container
+  .animate_container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE
+  .section_time_slot_container
+  .animate_container
+  .label.animate_element {
+  height: 4.4em;
+  background: var(--ScheduleBlack__2);
+}
+
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE
+  .section_time_slot_container
+  .animate_element {
+  width: 100%;
+  height: 6em;
+  background: var(--ScheduleBlack__1);
+}
+#__SCHEDULE_ONLINE_LARGE.__SCHEDULE_ONLINE_LARGE
+  .section_time_slot_container
+  .animate_element::after {
+  height: 100em;
+  width: 70%;
+  animation: shine 2s infinite linear;
+}

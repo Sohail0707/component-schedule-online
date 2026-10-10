@@ -1,0 +1,386 @@
+/* Importing the font 'Inter' */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+@import "color.css"; /* Importing color scheme */
+
+#__SCHEDULE_ONLINE_SMALL.__SCHEDULE_ONLINE_SMALL * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  line-height: 1;
+  text-shadow: none;
+  -webkit-font-smoothing: antialiased; /* Chrome, Safari */
+  -moz-osx-font-smoothing: grayscale; /* Firefox on Mac OS X */
+}
+
+/* Default properties of the html tags */
+#__SCHEDULE_ONLINE_SMALL.__SCHEDULE_ONLINE_SMALL a {
+  display: inline;
+}
+#__SCHEDULE_ONLINE_SMALL.__SCHEDULE_ONLINE_SMALL div {
+  display: block;
+}
+#__SCHEDULE_ONLINE_SMALL.__SCHEDULE_ONLINE_SMALL nav {
+  display: block;
+}
+#__SCHEDULE_ONLINE_SMALL.__SCHEDULE_ONLINE_SMALL h1 {
+  display: block;
+  font-size: 2em;
+  font-weight: bold;
+}
+#__SCHEDULE_ONLINE_SMALL.__SCHEDULE_ONLINE_SMALL h2 {
+  display: block;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+#__SCHEDULE_ONLINE_SMALL.__SCHEDULE_ONLINE_SMALL h3 {
+  display: block;
+  font-size: 1.17em;
+  font-weight: bold;
+}
+#__SCHEDULE_ONLINE_SMALL.__SCHEDULE_ONLINE_SMALL h4 {
+  display: block;
+  font-weight: bold;
+}
+#__SCHEDULE_ONLINE_SMALL.__SCHEDULE_ONLINE_SMALL h5 {
+  display: block;
+  font-size: 0.83em;
+  font-weight: bold;
+}
+#__SCHEDULE_ONLINE_SMALL.__SCHEDULE_ONLINE_SMALL img {
+  display: inline-block;
+}
+
+#__SCHEDULE_ONLINE_SMALL.__SCHEDULE_ONLINE_SMALL {
+  font-size: 10px;
+  margin: 0 auto;
+  max-width: 80em;
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap-reverse;
+  gap: 0.8em;
+  /* background-color: cornflowerblue; */
+}
+
+#__SCHEDULE_ONLINE_SMALL.__SCHEDULE_ONLINE_SMALL .select_service_section {
+  position: relative;
+  width: calc(100% - 30em);
+  height: 100%;
+  min-width: 40em;
+  flex-grow: 1;
+  background: var(--ui_background);
+  box-shadow: 0 0 0 0.2em inset var(--ui_border);
+}
+
+#__SCHEDULE_ONLINE_SMALL.__SCHEDULE_ONLINE_SMALL .select_service_section .input_box {
+  padding: 0 2.5em;
+  height: 7em;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+#__SCHEDULE_ONLINE_SMALL.__SCHEDULE_ONLINE_SMALL .select_service_section #service_name_input {
+  height: 1.2em;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 2em;
+  position: relative;
+  background: transparent;
+  pointer-events: none;
+  color: var(--input_text);
+}
+
+#__SCHEDULE_ONLINE_SMALL.__SCHEDULE_ONLINE_SMALL .select_service_section #service_name_input::placeholder {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1em;
+  font-weight: 400;
+  color: var(--input_placeholder);
+}
+
+#__SCHEDULE_ONLINE_SMALL.__SCHEDULE_ONLINE_SMALL .select_service_section .icon {
+  height: 3em;
+  width: 3em;
+  stroke-width: 0.15em;
+  color: var(--input_box_icon);
+  transition: transform 0.3s ease-in-out;
+}
+
+#__SCHEDULE_ONLINE_SMALL.__SCHEDULE_ONLINE_SMALL .button_schedule_online_small {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 7em;
+  min-width: 22em;
+  flex-grow: 1;
+  padding: 1.5em 3em;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0.7em 2em rgba(0, 0, 0, 0.25);
+  background: var(--schedule_button_background);
+}
+
+#__SCHEDULE_ONLINE_SMALL.__SCHEDULE_ONLINE_SMALL .button_schedule_online_small span {
+  min-width: max-content;
+  font-size: 1.6em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  color: var(--schedule_button_label);
+}
+
+/* /////////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////////// */
+#__SCHEDULE_ONLINE_SMALL.__SCHEDULE_ONLINE_SMALL .service_list_container {
+  max-height: 80em;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  bottom: 0;
+  left: 0;
+  transform: translateY(calc(100% + 1em));
+  box-shadow: 0 1em 2em rgba(0, 0, 0, 0.15);
+  background-color: var(--ui_background);
+  border: 0.15em solid var(--dropdown_border);
+  backdrop-filter: blur(1em);
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  z-index: 2;
+}
+
+#__SCHEDULE_ONLINE_SMALL.__SCHEDULE_ONLINE_SMALL .select_service_section.hide_list .service_list_container {
+  max-height: 0;
+  opacity: 0;
+}
+
+#__SCHEDULE_ONLINE_SMALL.__SCHEDULE_ONLINE_SMALL .select_service_section.hide_list .icon {
+  transform: rotate(180deg);
+}
+
+#__SCHEDULE_ONLINE_SMALL.__SCHEDULE_ONLINE_SMALL .select_level_container {
+  /* this section will be only visible in mobile device. This is devided into three equal 
+  columns. Each column contains a button. This entire container will stick to the top if 
+  scrolled down */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  position: relative;
+  margin: 1em;
+  /* background-color: darkorange; */
+}
+
+#__SCHEDULE_ONLINE_SMALL.__SCHEDULE_ONLINE_SMALL .select_level_container::after {
+  /* This will be the background of the buttons sliding area */
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--dropdown_button_container_background);
+  z-index: -1;
+}
+
+#__SCHEDULE_ONLINE_SMALL.__SCHEDULE_ONLINE_SMALL .select_level_container .btn__level {
+  /* The button to navigate between different levels of services */
+  font-size: inherit;
+  border: none;
+  padding: 1.6em;
+  height: 100%;
+  background: transparent;
+  cursor: pointer;
+}
+#__SCHEDULE_ONLINE_SMALL.__SCHEDULE_ONLINE_SMALL .select_level_container .btn__level span {
+  /* Separate text element of the button select level */
+  line-height: 1;
+  text-transform: uppercase;
+  font-size: 1.6em;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: var(--dropdown_button_label);
+  transition: color 0.3s;
+}
+
+#__SCHEDULE_ONLINE_SMALL.__SCHEDULE_ONLINE_SMALL .select_level_container .selected_button_indicator {
+  /* it is the sliding indicator of the buttons */
+  width: calc(100% / 3);
+  height: 100%;
+  position: absolute;
+  left: 0;
+  transform: translateX(0);
+  z-index: -1;
+  background: var(--dropdown_button_indicator);
+  box-shadow: 0 0.7em 2em rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease-in-out;
+}
+
+#__SCHEDULE_ONLINE_SMALL.__SCHEDULE_ONLINE_SMALL .btn__level.selected span {
+  /* The text of the button that is been selected */
+  color: var(--dropdown_button__active_label) !important;
+}
+
+/* /////////////////////////////////////////////////////////// */
+#__SCHEDULE_ONLINE_SMALL.__SCHEDULE_ONLINE_SMALL .service_list {
+  transform: translateX(0);
+  display: flex;
+  /* gap: 4em; */
+  width: 300%;
+  /* background-color: deepskyblue; */
+  transition: transform 0.3s ease-in-out;
+}
+
+#__SCHEDULE_ONLINE_SMALL.__SCHEDULE_ONLINE_SMALL .service_container {
+  width: calc(100% / 3);
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+  grid-auto-rows: minmax(21.8em, auto); /* Height of rows based on items */
+  gap: 1em;
+  padding: 1em;
+  /* background-color: crimson; */
+}
+
+/* service card style */
+#__SCHEDULE_ONLINE_SMALL.__SCHEDULE_ONLINE_SMALL .service_card {
+  /* The outer contaner of each service card */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2em;
+  padding: 1.8em;
+  min-width: fit-content;
+  /* max-width: 18em; */
+  width: 100%;
+  height: 21.8em;
+  border: 0.15em solid transparent;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+#__SCHEDULE_ONLINE_SMALL.__SCHEDULE_ONLINE_SMALL #TOP_SERVICE .service_card {
+  /* Different background color for top level service card */
+  background: var(--top_service_card_background);
+}
+#__SCHEDULE_ONLINE_SMALL.__SCHEDULE_ONLINE_SMALL #MIDDLE_SERVICE .service_card {
+  /* Different background color for mid level service card */
+  background: var(--middle_service_card_background);
+}
+#__SCHEDULE_ONLINE_SMALL.__SCHEDULE_ONLINE_SMALL #BASIC_SERVICE .service_card {
+  /* Different background color for basic level service card */
+  background: var(--basic_service_card_background);
+}
+
+#__SCHEDULE_ONLINE_SMALL.__SCHEDULE_ONLINE_SMALL .service_card:hover {
+  transform: scale(1.03) !important;
+  box-shadow: 0 1.2em 2em rgba(0, 0, 0, 0.12) !important;
+  border: 0.15em solid var(--service_card_border) !important;
+}
+
+/* Editing the service card that is been selected */
+#__SCHEDULE_ONLINE_SMALL.__SCHEDULE_ONLINE_SMALL .selected_card.service_card {
+  /* pointer-events: none; */
+  transform: scale(1.03) !important;
+  box-shadow: 0 1.2em 2em rgba(0, 0, 0, 0.12) !important;
+  background: var(--service_card_active_background) !important;
+}
+#__SCHEDULE_ONLINE_SMALL.__SCHEDULE_ONLINE_SMALL .selected_card .service_title {
+  color: var(--service_card_active_title) !important;
+}
+#__SCHEDULE_ONLINE_SMALL.__SCHEDULE_ONLINE_SMALL .selected_card .service_price {
+  color: var(--service_card_active_price) !important;
+}
+#__SCHEDULE_ONLINE_SMALL.__SCHEDULE_ONLINE_SMALL .selected_card .service_est_time {
+  color: var(--service_card_active_time) !important;
+}
+#__SCHEDULE_ONLINE_SMALL.__SCHEDULE_ONLINE_SMALL .selected_card .service_description {
+  color: var(--service_card_active_description) !important;
+}
+
+#__SCHEDULE_ONLINE_SMALL.__SCHEDULE_ONLINE_SMALL .service_title {
+  /* the title of each service card */
+  font-size: 1.6em;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.136em;
+  color: var(--service_card_title);
+  pointer-events: none;
+}
+#__SCHEDULE_ONLINE_SMALL.__SCHEDULE_ONLINE_SMALL .service_price {
+  /* the price mentioned on each service card */
+  font-size: 3.2em;
+  font-weight: 300;
+  color: var(--service_card_price);
+  margin-top: auto;
+  pointer-events: none;
+}
+
+#__SCHEDULE_ONLINE_SMALL.__SCHEDULE_ONLINE_SMALL .service_est_time {
+  /* estimate time mentioned on each service card */
+  font-size: 1.4em;
+  text-transform: capitalize;
+  font-weight: 500;
+  color: var(--service_card_time);
+  pointer-events: none;
+}
+
+#__SCHEDULE_ONLINE_SMALL.__SCHEDULE_ONLINE_SMALL .service_description {
+  /* thesmall description mentioned on each service card */
+  font-size: 1.2em;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--service_card_description);
+  pointer-events: none;
+}
+
+/* //////////////////////////////////////////////////////////////// */
+#__SCHEDULE_ONLINE_SMALL.__SCHEDULE_ONLINE_SMALL .animate_element {
+  /* this is the basic style. We have style it separately based on where it will be
+   placed */
+  position: relative;
+  overflow: hidden;
+  width: 15em;
+  height: 21.8em;
+  background: var(--ui_background);
+  pointer-events: none !important;
+}
+
+#__SCHEDULE_ONLINE_SMALL.__SCHEDULE_ONLINE_SMALL .animate_element::after {
+  /* this is the sudo element which will be placed over the animate_element */
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 15em;
+  height: 50em;
+  animation: shine 2s infinite linear;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.03),
+    rgba(0, 0, 0, 0.08),
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.08),
+    rgba(0, 0, 0, 0.03),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+@keyframes shine {
+  0% {
+    left: -100%;
+    transform: rotate(30deg) translate(-120%, -50%);
+  }
+
+  100% {
+    left: 100%;
+    transform: rotate(30deg) translate(20%, -50%);
+  }
+}
